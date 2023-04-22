@@ -1,0 +1,19 @@
+{
+    "name": "smoothie/resume-exporter",
+    "description": "Export JSON Resume into a PDF or DB.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Smoothie\\ResumeExporter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marc Eichenseher",
+            "email": "hello@marceichenseher.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
