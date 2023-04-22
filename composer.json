@@ -1,19 +1,30 @@
 {
     "name": "smoothie/resume-exporter",
     "description": "Export JSON Resume into a PDF or DB.",
-    "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Smoothie\\ResumeExporter\\": "src/"
-        }
-    },
+    "type": "library",
     "authors": [
         {
             "name": "Marc Eichenseher",
             "email": "hello@marceichenseher.com"
         }
     ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.21"
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Smoothie\\ResumeExporter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Smoothie\\Tests\\ResumeExporter\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
