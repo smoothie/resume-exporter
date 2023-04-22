@@ -1,7 +1,8 @@
 # Directories
-/vendor/
+vendor/
 
 # Files
 .composer_compiled_assets
+.php-cs-fixer.cache
 .phpunit.result.cache
 composer.lock

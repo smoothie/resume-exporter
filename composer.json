@@ -9,9 +9,6 @@
             "email": "hello@marceichenseher.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.5.21"
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
@@ -26,5 +23,16 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "scripts": {
+        "check-code-format": "@php ./infrastructure/vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "check-quality": [
+            "@check-code-format",
+            "@check-types",
+            "@check-tests"
+        ],
+        "check-tests": "@php ./infrastructure/vendor/bin/phpunit",
+        "check-types": "@php ./infrastructure/vendor/bin/psalm --find-dead-code=always --output-format=compact --no-progress",
+        "fix-code-format": "@php ./infrastructure/vendor/bin/php-cs-fixer fix --diff"
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Smoothie\Tests\ResumeExporter;
+namespace Smoothie\Tests\ResumeExporter\Unit;
 
 use PHPUnit\Framework\TestCase;
 
