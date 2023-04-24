@@ -66,9 +66,16 @@ The dependencies for those are living in the ./infrastructure directory.
 [] Support for images (logos).
 [] Support for splitting resume into multiple files.
 [] Support for other standards besides JSON Resume.
+[] Support relative paths (cli).
 ```
 
 ## Limitations
+
+### Absolute paths only
+
+The application expects absolute paths only.
+
+So when you pass an incoming out outputting document/map, be aware of that.
 
 ### Cloning Blocks PHPWord
 
