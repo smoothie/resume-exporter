@@ -19,14 +19,17 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 
 return $config->setRules([
-    '@PhpCsFixer:risky' => true,
     // [PER:risky & Symfony:risky source: https://cs.symfony.com/doc/ruleSets/PhpCsFixerRisky.html]
-    '@Symfony' => true,
     '@PHP82Migration' => true,
+    '@PhpCsFixer:risky' => true,
+    '@Symfony:risky' => true,
+    '@Symfony' => true,
     'trailing_comma_in_multiline' => ['elements' => ['arguments', 'arrays', 'match', 'parameters']],
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
     'phpdoc_to_param_type' => true,
     'date_time_immutable' => true,
+    'not_operator_with_successor_space' => true,
+    'method_chaining_indentation' => true,
     'single_quote' => ['strings_containing_single_quote_chars' => true],
     'cast_spaces' => ['space' => 'single'],
     'blank_line_before_statement' => ['statements' => ['break', 'continue', 'declare', 'return', 'throw', 'try']],
