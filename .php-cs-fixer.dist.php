@@ -30,6 +30,10 @@ return $config->setRules([
     'single_quote' => ['strings_containing_single_quote_chars' => true],
     'cast_spaces' => ['space' => 'single'],
     'blank_line_before_statement' => ['statements' => ['break', 'continue', 'declare', 'return', 'throw', 'try']],
+    'phpdoc_align' => [
+        'align' => 'left',
+        'tags' => ['method', 'param', 'property', 'property-read', 'property-write', 'return', 'throws', 'type', 'var'],
+    ],
     'no_extra_blank_lines' => [
         'tokens' => [
             'attribute',
