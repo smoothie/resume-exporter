@@ -9,6 +9,25 @@
             "email": "hello@marceichenseher.com"
         }
     ],
+    "require": {
+        "dompdf/dompdf": "^2.0",
+        "phpoffice/phpword": "^1.0",
+        "ramsey/uuid": "^4.7",
+        "symfony/console": "^6.2",
+        "symfony/flex": "^2.2",
+        "symfony/framework-bundle": "^6.2",
+        "symfony/http-kernel": "^6.2",
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/process": "^6.2",
+        "symfony/property-access": "^6.2",
+        "symfony/runtime": "^6.2",
+        "symfony/validator": "^6.2",
+        "symfony/yaml": "^6.2",
+        "webmozart/assert": "^1.11"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
@@ -22,17 +41,28 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
         "sort-packages": true
     },
     "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
         "check-code-format": "@php ./infrastructure/vendor/bin/php-cs-fixer fix --dry-run --diff",
         "check-quality": [
             "@check-code-format",
             "@check-types",
             "@check-tests"
         ],
-        "check-tests": "@php ./infrastructure/vendor/bin/phpunit",
+        "check-tests": "@php ./infrastructure/vendor/bin/simple-phpunit",
         "check-types": "@php ./infrastructure/vendor/bin/psalm --find-dead-code=always --output-format=compact --no-progress",
         "fix-code-format": "@php ./infrastructure/vendor/bin/php-cs-fixer fix --diff"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5"
     }
 }

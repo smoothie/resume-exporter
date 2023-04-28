@@ -1,8 +1,17 @@
 # Directories
+assets/
+coverage/
+var/
 vendor/
 
 # Files
-.composer_compiled_assets
+.env*
 .php-cs-fixer.cache
 .phpunit.result.cache
 composer.lock
+symfony.lock
+
+###> symfony/framework-bundle ###
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+###< symfony/framework-bundle ###
