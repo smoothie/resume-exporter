@@ -8,17 +8,17 @@ use Smoothie\ResumeExporter\Domain\Mapping\MappingStrategy;
 
 class NullMappingStrategy implements MappingStrategy
 {
-    public function translate(array $map, array $from): array
+    public function translate(array $map, array $from, array $settings): array
     {
         return [];
     }
 
-    public function normalize(array $map, array $from): array
+    public function normalize(array $map, array $from, array $settings): array
     {
         return [];
     }
 
-    public function validate(array $map, array $from): void
+    public function validate(array $map, array $from, array $settings): void
     {
     }
 }

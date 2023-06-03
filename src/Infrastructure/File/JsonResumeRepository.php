@@ -7,7 +7,6 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 use Smoothie\ResumeExporter\Domain\Mapping\Input;
 use Smoothie\ResumeExporter\Domain\Mapping\InputMapping;
 use Smoothie\ResumeExporter\Domain\Mapping\MappingStrategy;
-use Smoothie\ResumeExporter\Domain\Resume\Exceptions\InvalidCanonicalReceivedException;
 use Smoothie\ResumeExporter\Domain\Resume\Resume;
 use Smoothie\ResumeExporter\Domain\Resume\ResumeFactory;
 use Smoothie\ResumeExporter\Domain\Resume\ResumeRepository;
@@ -22,9 +21,6 @@ class JsonResumeRepository implements ResumeRepository, InputMapping
     ) {
     }
 
-    /**
-     * @throws InvalidCanonicalReceivedException
-     */
     public function translateToCanonical(Input $input, array $canonicalData): Resume
     {
         $this->propertyAccessor->setValue(
@@ -43,10 +39,10 @@ class JsonResumeRepository implements ResumeRepository, InputMapping
         $inputMap = $input->getMap();
         $from = $input->getInput();
 
-        $this->mappingStrategy->validate(map: $inputMap, from: $from);
-        $map = $this->mappingStrategy->normalize(map: $inputMap, from: $from);
-        $this->mappingStrategy->validate(map: $map, from: $from);
-        $canonical = $this->mappingStrategy->translate(map: $map, from: $from);
+        $this->mappingStrategy->validate(map: $inputMap, from: $from, settings: []);
+        $map = $this->mappingStrategy->normalize(map: $inputMap, from: $from, settings: []);
+        $this->mappingStrategy->validate(map: $map, from: $from, settings: []);
+        $canonical = $this->mappingStrategy->translate(map: $map, from: $from, settings: []);
 
         return $this->translateToCanonical(input: $input, canonicalData: $canonical);
     }

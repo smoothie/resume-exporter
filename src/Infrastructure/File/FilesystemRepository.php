@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Smoothie\ResumeExporter\Infrastructure\File;
 
+use Smoothie\ResumeExporter\Application\Mapping\FilesystemRepository as WriteFilesystemContract;
 use Smoothie\ResumeExporter\Domain\Mapping\Exceptions\UnableToParseJsonException;
-use Smoothie\ResumeExporter\Domain\Mapping\FilesystemContract;
+use Smoothie\ResumeExporter\Domain\Mapping\FilesystemRepository as ReadFilesystemContract;
 
-class Filesystem implements FilesystemContract
+class FilesystemRepository implements ReadFilesystemContract, WriteFilesystemContract
 {
-    public function __construct(private Filesystem $filesystem)
+    public function __construct(private readonly FilesystemRepository $filesystem)
     {
     }
 
@@ -38,6 +39,11 @@ class Filesystem implements FilesystemContract
             throw new UnableToParseJsonException(path: $path, previousException: $exception);
         }
 
-        return (array)$result;
+        return (array) $result;
+    }
+
+    public function save(string $outputPath, string $outputData): void
+    {
+        file_put_contents(filename: $outputPath, data: $outputData);
     }
 }

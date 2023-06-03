@@ -10,10 +10,13 @@ class MapItem
 {
     public function __construct(
         private readonly string $fromItem,
+        private readonly string $fromItemWithDotNotation,
         private readonly string $toItem,
+        private readonly string $toItemWithDotNotation,
         private readonly int $depth,
         public readonly bool $isArray,
         private readonly int $count = 0,
+        private readonly string $firstTableColumn = '',
     ) {
     }
 
@@ -42,6 +45,24 @@ class MapItem
         return $this->isArray;
     }
 
+    public function fromItemWithDotNotation(): string
+    {
+        return $this->fromItemWithDotNotation;
+    }
+
+    public function toItemWithDotNotation(): string
+    {
+        return $this->toItemWithDotNotation;
+    }
+
+    /**
+     * @deprecated extract into a repository method
+     */
+    public function firstTableColumn(): string
+    {
+        return $this->firstTableColumn;
+    }
+
     /**
      * @throws UnableToReplaceDotNotationException when unable to find needle in haystack
      */
@@ -52,10 +73,13 @@ class MapItem
 
         $new = new self(
             fromItem: $newFromItem,
+            fromItemWithDotNotation: $this->fromItemWithDotNotation,
             toItem: $newToItem,
+            toItemWithDotNotation: $this->toItemWithDotNotation,
             depth: $this->depth,
             isArray: $this->isArray,
             count: $this->count,
+            firstTableColumn: $this->firstTableColumn,
         );
 
         return clone $new;
@@ -78,10 +102,13 @@ class MapItem
     {
         return new self(
             fromItem: $this->fromItem,
+            fromItemWithDotNotation: $this->fromItemWithDotNotation,
             toItem: $this->toItem,
+            toItemWithDotNotation: $this->toItemWithDotNotation,
             depth: $this->depth,
             isArray: $this->isArray,
             count: $count,
+            firstTableColumn: $this->firstTableColumn,
         );
     }
 }

@@ -34,7 +34,11 @@ class PropertyAccessStrategyTest extends BasicTestCase
     {
         $propertyAccessStrategy = $this->buildPropertyAccessorStrategy();
 
-        $normalizedMap = $propertyAccessStrategy->normalize(map: $assertions['map'], from: $assertions['from']);
+        $normalizedMap = $propertyAccessStrategy->normalize(
+            map: $assertions['map'],
+            from: $assertions['from'],
+            settings: $assertions['settings'],
+        );
 
         static::assertSame(expected: $expectations['normalizedMap'], actual: $normalizedMap);
     }
@@ -50,7 +54,11 @@ class PropertyAccessStrategyTest extends BasicTestCase
         $propertyAccessStrategy = $this->buildPropertyAccessorStrategy();
 
         $this->expectException($expectations['exception']);
-        $propertyAccessStrategy->normalize(map: $assertions['map'], from: $assertions['from']);
+        $propertyAccessStrategy->normalize(
+            map: $assertions['map'],
+            from: $assertions['from'],
+            settings: $assertions['settings'],
+        );
     }
 
     /**
@@ -60,7 +68,11 @@ class PropertyAccessStrategyTest extends BasicTestCase
     {
         $propertyAccessStrategy = $this->buildPropertyAccessorStrategy();
 
-        $result = $propertyAccessStrategy->translate(map: $assertions['map'], from: $assertions['from']);
+        $result = $propertyAccessStrategy->translate(
+            map: $assertions['map'],
+            from: $assertions['from'],
+            settings: $assertions['settings'],
+        );
 
         static::assertSame(expected: $expectations['to'], actual: $result);
     }
@@ -88,7 +100,11 @@ class PropertyAccessStrategyTest extends BasicTestCase
             mapItemRepository: new EmptyMapItemRepository(),
         );
 
-        $propertyAccessStrategy->validate(map: $assertions['map'], from: $assertions['from']);
+        $propertyAccessStrategy->validate(
+            map: $assertions['map'],
+            from: $assertions['from'],
+            settings: $assertions['settings'],
+        );
     }
 
     /**
@@ -117,7 +133,11 @@ class PropertyAccessStrategyTest extends BasicTestCase
         );
 
         $this->expectException($expectations['exception']);
-        $propertyAccessStrategy->validate(map: $assertions['map'], from: $assertions['from']);
+        $propertyAccessStrategy->validate(
+            map: $assertions['map'],
+            from: $assertions['from'],
+            settings: $assertions['settings'],
+        );
     }
 
     public function buildPropertyAccessorStrategy(): PropertyAccessStrategy
@@ -149,6 +169,8 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => ['[some]' => '[foo]', '[else]' => '[bar]'],
@@ -166,6 +188,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -187,6 +210,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -210,6 +234,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -234,6 +259,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -255,6 +281,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -277,6 +304,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -299,6 +327,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -319,6 +348,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -341,6 +371,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -376,6 +407,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         ],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'normalizedMap' => [
@@ -396,6 +428,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                     'from' => [
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => UnableToFindParentFromItemException::class,
@@ -408,6 +441,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => InvalidParentFromItemFormatException::class,
@@ -420,6 +454,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => ['imaMap' => 'foo'],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => InvalidParentFromItemFormatException::class,
@@ -432,6 +467,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => [['two' => 'foo']],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => MismatchedMapItemDepthException::class,
@@ -444,6 +480,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
 //                        'some' => [['two' => 'foo']],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => MismatchedMapItemDepthException::class,
@@ -462,6 +499,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'to' => [
@@ -480,6 +518,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'to' => [
@@ -500,6 +539,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'to' => [
@@ -520,6 +560,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => ['nested' => 'from some'],
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'to' => [
@@ -541,6 +582,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'from' => [
@@ -562,6 +604,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'from' => 'from from',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'from' => [
@@ -588,6 +631,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => UnableToMapException::class,
@@ -613,6 +657,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => UnableToMapException::class,
@@ -638,6 +683,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'no_some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => UnableToMapException::class,
@@ -668,6 +714,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'some' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => InvalidArgumentException::class,
@@ -685,6 +732,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                 'assertions' => [
                     'map' => ['some' => 'foo', 'else' => 'bar'],
                     'from' => [],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => InvalidArgumentException::class,
@@ -704,6 +752,7 @@ class PropertyAccessStrategyTest extends BasicTestCase
                         'from' => 'from some',
                         'else' => 'from else',
                     ],
+                    'settings' => [],
                 ],
                 'expectations' => [
                     'exception' => UnableToMapException::class,

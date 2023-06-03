@@ -10,7 +10,7 @@ use Smoothie\ResumeExporter\Domain\Mapping\MapItemsFactory;
 
 class EmptyMapItemsFactory implements MapItemsFactory
 {
-    public function createMapItems(array $map): MapItems
+    public function createMapItems(array $map, array $settings = []): MapItems
     {
         return new MapItems(items: []);
     }

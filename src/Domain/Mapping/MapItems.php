@@ -23,7 +23,7 @@ class MapItems implements \Countable
      */
     public function getArrayItems(): array
     {
-        return array_filter($this->items, fn(MapItem $mapItem) => $mapItem->isArray());
+        return array_filter($this->items, fn (MapItem $mapItem) => $mapItem->isArray());
     }
 
     public function getHighestDepth(): int
@@ -53,7 +53,7 @@ class MapItems implements \Countable
      */
     public function getNoneArrayItems(): array
     {
-        return array_filter($this->items, fn(MapItem $mapItem) => $mapItem->isArray() === false);
+        return array_filter($this->items, fn (MapItem $mapItem) => $mapItem->isArray() === false);
     }
 
     public function add(MapItem $mapItem): self
@@ -75,7 +75,7 @@ class MapItems implements \Countable
             self::TYPE_ARRAY => $this->getArrayItems(),
             self::TYPE_NONE_ARRAY => $this->getNoneArrayItems(),
             self::TYPE_ALL => $this->getItems(),
-            default => throw new \Excpetion('Wrong type'),
+            default => throw new \Exception(sprintf('MapItems: Unable to filter unknown type: "%1$s"', $type)),
         };
 
         $items = [];

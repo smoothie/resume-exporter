@@ -30,7 +30,7 @@ class PropertyAccessStrategy implements MappingStrategy
     ) {
     }
 
-    public function translate(array $map, array $from): array
+    public function translate(array $map, array $from, array $settings): array
     {
         $to = [];
 
@@ -66,7 +66,7 @@ class PropertyAccessStrategy implements MappingStrategy
      * @throws UnableToFindParentFromItemException
      * @throws UnableToReplaceDotNotationException
      */
-    public function normalize(array $map, array $from): array
+    public function normalize(array $map, array $from, array $settings): array
     {
         $mapItems = $this->propertyAccessMapItemsFactory->createMapItems(map: $map);
         $mapArrayItems = $mapItems->getArrayItems();
@@ -90,7 +90,7 @@ class PropertyAccessStrategy implements MappingStrategy
 
             for ($j = 0; $j < $mapItemCount; ++$j) {
                 // TODO: cleanup.. Extract Asterisk notation into domain space
-                $normalizedMapItem = $mapItem->replaceInItems(needle: self::ASTERISK, replace: (string)$j);
+                $normalizedMapItem = $mapItem->replaceInItems(needle: self::ASTERISK, replace: (string) $j);
                 $arrayItems = $arrayItems->add($normalizedMapItem);
             }
         }
@@ -101,14 +101,14 @@ class PropertyAccessStrategy implements MappingStrategy
         }
 
         // TODO: cleanup.. maybe extract everything above to somewhere else and use a loop on highestDepth
-        return $this->normalize(map: $normalizedMap, from: $from);
+        return $this->normalize(map: $normalizedMap, from: $from, settings: $settings);
     }
 
     /**
      * @throws UnableToMapException when we can't find a map item, or a map item is not a string, $map contains array notation
      * @throws InvalidArgumentException when $map or $from are empty
      */
-    public function validate(array $map, array $from): void
+    public function validate(array $map, array $from, array $settings): void
     {
         Assert::allNotEmpty([
             $map,
@@ -140,9 +140,9 @@ class PropertyAccessStrategy implements MappingStrategy
                 // not normalized map and found an array notation
 
                 if (mb_substr_count(haystack: $toItem, needle: self::WILDCARD) === mb_substr_count(
-                        haystack: $fromItem,
-                        needle: self::WILDCARD,
-                    )) {
+                    haystack: $fromItem,
+                    needle: self::WILDCARD,
+                )) {
                     // same amount of wildcards -> considered valid
                     continue;
                 }

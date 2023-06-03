@@ -12,10 +12,7 @@ use Webmozart\Assert\Assert;
 
 class PropertyAccessMapItemsFactory implements MapItemsFactory
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function createMapItems(array $map): MapItems
+    public function createMapItems(array $map, array $settings = []): MapItems
     {
         $arrayItems = [];
         $noneArrayItems = [];
@@ -72,7 +69,9 @@ class PropertyAccessMapItemsFactory implements MapItemsFactory
     ): MapItem {
         return new MapItem(
             fromItem: $fromItem,
+            fromItemWithDotNotation: $fromItem,
             toItem: $toItem,
+            toItemWithDotNotation: $toItem,
             depth: $depth,
             isArray: $isArray,
         );

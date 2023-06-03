@@ -6,7 +6,7 @@ namespace Smoothie\ResumeExporter\Domain\Mapping;
 
 use Smoothie\ResumeExporter\Domain\Mapping\Exceptions\UnableToParseJsonException;
 
-interface FilesystemContract
+interface FilesystemRepository
 {
     public function exists(string $path): bool;
 
