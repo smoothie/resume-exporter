@@ -23,9 +23,13 @@
         "symfony/twig-bundle": "^6.2",
         "symfony/validator": "^6.2",
         "symfony/yaml": "^6.2",
-        "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0",
+        "twig/extra-bundle": "^2.12 || ^3.0",
+        "twig/twig": "^2.12 || ^3.0",
         "webmozart/assert": "^1.11"
+    },
+    "require-dev": {
+        "mikey179/vfsstream": "^1.6",
+        "mockery/mockery": "^1.5"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -63,9 +67,5 @@
         "check-tests": "@php ./infrastructure/vendor/bin/simple-phpunit",
         "check-types": "@php ./infrastructure/vendor/bin/psalm --find-dead-code=always --output-format=compact --no-progress",
         "fix-code-format": "@php ./infrastructure/vendor/bin/php-cs-fixer fix --diff"
-    },
-    "require-dev": {
-        "mikey179/vfsstream": "^1.6",
-        "mockery/mockery": "^1.5"
     }
 }
