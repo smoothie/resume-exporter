@@ -194,6 +194,7 @@ class Resume
                         'Competences' => $metaContentLabels->competences(),
                         'MoreCompetences' => $metaContentLabels->moreCompetences(),
                         'ExperienceInYears' => $metaContentLabels->experienceInYears(),
+                        'ExperienceLevel' => $metaContentLabels->experienceLevel(),
                         'Page' => $metaContentLabels->page(),
                         'PageOf' => $metaContentLabels->pageOf(),
                         'Years' => [

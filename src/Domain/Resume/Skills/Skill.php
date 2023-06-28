@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Smoothie\ResumeExporter\Domain\Resume\Skills;
 
+use JetBrains\PhpStorm\Deprecated;
 use Webmozart\Assert\Assert;
 
 class Skill
@@ -13,7 +14,7 @@ class Skill
      */
     public function __construct(
         private readonly string $name,
-        #[\JetBrains\PhpStorm\Deprecated(reason: 'Will be removed as soon as we support custom fields in JSONResume')] private readonly string $label,
+        #[Deprecated(reason: 'Will be removed as soon as we support custom fields in JSONResume')] private readonly string $label,
         private readonly array $detailedKeywords,
     ) {
         Assert::allIsInstanceOf(value: $detailedKeywords, class: DetailedKeyword::class);

@@ -1,0 +1,27 @@
+{% block sectionSkill %}
+    <div class="section -skills">
+        <h2 class="title -l">{{ skill['name'] }}</h2>
+
+        <table class="table -skills">
+            <thead>
+            <tr class="table-row">
+                <th class="table-cell -min-small"></th>
+                <th class="table-cell -full">
+                    <p class="title -m">{{ skill['label'] }}</p>
+                </th>
+                <th class="table-cell">
+                    <p class="title -m">{{ labelExperienceInYears }}</p>
+                </th>
+                <th class="table-cell">
+                    <p class="title -m">{{ labelExperienceLevel }}</p>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for keyword in skill['keywords'] %}
+                {{ block('rowSkillKeyword', 'template-row-skill-keyword.html.twig') }}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

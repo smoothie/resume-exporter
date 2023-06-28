@@ -46,13 +46,13 @@ The dependencies for those are living in the ./infrastructure directory.
 ## Wishlist
 ```md
 [] Full JSONResume support
-    [] :construction: Basics
-    [] :construction: Education
-    [] :construction: Skills
-    [] :construction: Projects
-    [] :construction: Meta
-    [] :construction: Custom Properties
-    [] :construction: Languages
+    [x] Basics
+    [x] Education
+    [x] Skills
+    [x] Projects
+    [x] Meta
+    [x] Custom Properties
+    [x] Languages
     [] Work
     [] Volunteer
     [] Awards
@@ -60,20 +60,22 @@ The dependencies for those are living in the ./infrastructure directory.
 [] Publications
 [] Interests
 [] Slim down dependencies (eg. we do not need the complete framework bundle).
-[] Investigate if we can get rid of the pcre ini sets by increasing PCRE stacksize.
--
-Source: https://stackoverflow.com/questions/7620910/regexp-in-preg-match-function-returning-browser-error/7627962#7627962
-[] Support for PHPWord Elements (like links).
-[] Support for images (logos).
 [] Support for splitting resume into multiple files.
 [] Support for other standards besides JSON Resume.
 [] Support relative paths (cli).
 [] Support for output filters (eg. sort experience in years by [level desc, years desc, skills keyword asc]).
 [] Make singular/plural in maps optional.
-[] Cleanup
 [] map/normalization into domain space (eg. Extract Asterisk)
-[] psalm type for canonical array
-[] allow null/empty values
+[] QA: Add psalm type for canonical array
+[] Allow null/empty values
+[] Reiterate on MapItem in domain space
+    -> is Array Notation a Domain thing? if yes, define it. if no what is the abstract thing of it?
+    -> what are from/to items?
+    -> how can we simplify the creation of the map items? or do we need more MappingStrategies to learn more about those?
+[] DomPDF: allow overriding chroot in settings
+[] DomPDF: allow enabling remote content
+[] CLI: warn when output file already exist
+[] CLI: add force option to override output file when it already exists
 ```
 
 ## Limitations

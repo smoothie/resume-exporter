@@ -1,0 +1,13 @@
+{% block tableCert %}
+    <table class="table -certs">
+        <tr class="table-row">
+            <td class="table-cell -min-small">
+                <p class="table-dates">{{ education['educationStartDate'] }} - {{ education['educationEndDate'] }}</p>
+            </td>
+            <td class="table-cell">
+                <h2 class="title -l">{{ education['educationArea'] }}</h2>
+                <p class="subtitle">{{ education['educationStudyType'] }}</p>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

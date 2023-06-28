@@ -113,7 +113,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                         'inputSource' => 'unused',
                         'mapSource' => 'unused',
                         'input' => json_decode(
-                            json: '{"$schema":"../schemas/resume-schema.json","basics":{"name":"basic.name","label":"basic.label","email":"basic.email","phone":"basic.phone","url":"basic.url","summary":"basic.summary","location":{"address":"basic.location.address","postalCode":"basic.location.postalCode","city":"basic.location.city","countryCode":"basic.location.countryCode"},"profiles":[{"network":"basic.profiles.0.network","username":"basic.profiles.0.username","url":"basic.profiles.0.url"},{"network":"basic.profiles.*.network","username":"basic.profiles.*.username","url":"basic.profiles.*.url"}],"_overview":{"items":[{"label":"basic.overview.items.0.label","value":"basic.overview.items.0.value"},{"label":"basic.overview.items.1.label","value":"basic.overview.items.1.value"},{"label":"basic.overview.items.*.label","value":"basic.overview.items.*.value"}]}},"education":[{"area":"education.0.area","endDate":"education.0.endDate","startDate":"education.0.startDate","studyType":"education.0.studyType"},{"area":"education.1.area","endDate":"education.1.endDate","startDate":"education.1.startDate","studyType":"education.1.studyType"}],"skills":[{"name":"skills.0.name","_label":"skills.0.label","_detailedKeywords":[{"keyword":"skills.0.detailedKeywords.0.keyword","level":"skills.0.detailedKeywords.0.level","experienceInYears":"skills.0.detailedKeywords.0.experienceInYears"},{"keyword":"skills.0.detailedKeywords.1.keyword","level":"skills.0.detailedKeywords.1.level","experienceInYears":"skills.0.detailedKeywords.1.experienceInYears"},{"keyword":"skills.0.detailedKeywords.*.keyword","level":"skills.0.detailedKeywords.*.level","experienceInYears":"skills.0.detailedKeywords.*.experienceInYears"}]},{"name":"skills.*.name","_label":"skills.*._label","_detailedKeywords":[{"keyword":"skills.*.detailedKeywords.*.keyword","level":"skills.*.detailedKeywords.*.level","experienceInYears":"skills.*.detailedKeywords.*.experienceInYears"}]}],"languages":[{"language":"languages.*.language","fluency":"languages.*.fluency"}],"projects":[{"name":"projects.0.name","description":"projects.0.description","entity":"projects.0.entity","type":"projects.0.type","startDate":"projects.0.startDate","endDate":"projects.0.endDate","highlights":["projects.0.highlights.0","projects.0.highlights.1","projects.0.highlights.2","projects.0.highlights.*"],"keywords":["projects.0.keywords.*"],"roles":["projects.0.roles.*"]},{"name":"projects.*.name","description":"projects.*.description","entity":"projects.*.entity","type":"projects.*.type","startDate":"projects.*.startDate","endDate":"projects.*.endDate","highlights":["projects.*.highlights.*"],"keywords":["projects.*.keywords.*"],"roles":["projects.*.roles.*"]}],"meta":{"canonical":"meta.canonical","version":"meta.version","lastModified":"meta.lastModified","_content":{"labels":{"skills":"meta.content.labels.skills","languages":"meta.content.labels.languages","language":"meta.content.labels.language","overview":"meta.content.labels.overview","projects":"meta.content.labels.projects","education":"meta.content.labels.education","competences":"meta.content.labels.competences","moreCompetences":"meta.content.labels.moreCompetences","experienceInYears":"meta.content.labels.experienceInYears","years":{"singular":"meta.content.labels.years.singular","plural":"meta.content.label.years.plurals"},"page":"meta.content.labels.page","pageOf":"meta.content.label.pageOfs"}}}}',
+                            json: '{"$schema":"../schemas/resume-schema.json","basics":{"name":"basic.name","label":"basic.label","email":"basic.email","phone":"basic.phone","url":"basic.url","summary":"basic.summary","location":{"address":"basic.location.address","postalCode":"basic.location.postalCode","city":"basic.location.city","countryCode":"basic.location.countryCode"},"profiles":[{"network":"basic.profiles.0.network","username":"basic.profiles.0.username","url":"basic.profiles.0.url"},{"network":"basic.profiles.*.network","username":"basic.profiles.*.username","url":"basic.profiles.*.url"}],"_overview":{"items":[{"label":"basic.overview.items.0.label","value":"basic.overview.items.0.value"},{"label":"basic.overview.items.1.label","value":"basic.overview.items.1.value"},{"label":"basic.overview.items.*.label","value":"basic.overview.items.*.value"}]}},"education":[{"area":"education.0.area","endDate":"education.0.endDate","startDate":"education.0.startDate","studyType":"education.0.studyType"},{"area":"education.1.area","endDate":"education.1.endDate","startDate":"education.1.startDate","studyType":"education.1.studyType"}],"skills":[{"name":"skills.0.name","_label":"skills.0.label","_detailedKeywords":[{"keyword":"skills.0.detailedKeywords.0.keyword","level":"skills.0.detailedKeywords.0.level","experienceInYears":"skills.0.detailedKeywords.0.experienceInYears"},{"keyword":"skills.0.detailedKeywords.1.keyword","level":"skills.0.detailedKeywords.1.level","experienceInYears":"skills.0.detailedKeywords.1.experienceInYears"},{"keyword":"skills.0.detailedKeywords.*.keyword","level":"skills.0.detailedKeywords.*.level","experienceInYears":"skills.0.detailedKeywords.*.experienceInYears"}]},{"name":"skills.*.name","_label":"skills.*._label","_detailedKeywords":[{"keyword":"skills.*.detailedKeywords.*.keyword","level":"skills.*.detailedKeywords.*.level","experienceInYears":"skills.*.detailedKeywords.*.experienceInYears"}]}],"languages":[{"language":"languages.*.language","fluency":"languages.*.fluency"}],"projects":[{"name":"projects.0.name","description":"projects.0.description","entity":"projects.0.entity","type":"projects.0.type","startDate":"projects.0.startDate","endDate":"projects.0.endDate","highlights":["projects.0.highlights.0","projects.0.highlights.1","projects.0.highlights.2","projects.0.highlights.*"],"keywords":["projects.0.keywords.*"],"roles":["projects.0.roles.*"]},{"name":"projects.*.name","description":"projects.*.description","entity":"projects.*.entity","type":"projects.*.type","startDate":"projects.*.startDate","endDate":"projects.*.endDate","highlights":["projects.*.highlights.*"],"keywords":["projects.*.keywords.*"],"roles":["projects.*.roles.*"]}],"meta":{"canonical":"meta.canonical","version":"meta.version","lastModified":"meta.lastModified","_content":{"labels":{"skills":"meta.content.labels.skills","languages":"meta.content.labels.languages","language":"meta.content.labels.language","overview":"meta.content.labels.overview","projects":"meta.content.labels.projects","education":"meta.content.labels.education","competences":"meta.content.labels.competences","moreCompetences":"meta.content.labels.moreCompetences","experienceInYears":"meta.content.labels.experienceInYears","experienceLevel":"meta.content.labels.experienceLevel","years":{"singular":"meta.content.labels.years.singular","plural":"meta.content.label.years.plurals"},"page":"meta.content.labels.page","pageOf":"meta.content.label.pageOfs"}}}}',
                             associative: true,
                         ),
                         'map' => [
@@ -164,6 +164,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                             '[meta][_content][labels][competences]' => '[Meta][Content][Labels][Competences]',
                             '[meta][_content][labels][moreCompetences]' => '[Meta][Content][Labels][MoreCompetences]',
                             '[meta][_content][labels][experienceInYears]' => '[Meta][Content][Labels][ExperienceInYears]',
+                            '[meta][_content][labels][experienceLevel]' => '[Meta][Content][Labels][ExperienceLevel]',
                             '[meta][_content][labels][page]' => '[Meta][Content][Labels][Page]',
                             '[meta][_content][labels][pageOf]' => '[Meta][Content][Labels][PageOf]',
                             '[meta][_content][labels][years][singular]' => '[Meta][Content][Labels][Years][Singular]',
@@ -326,6 +327,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => 'meta.content.labels.competences',
                                     'MoreCompetences' => 'meta.content.labels.moreCompetences',
                                     'ExperienceInYears' => 'meta.content.labels.experienceInYears',
+                                    'ExperienceLevel' => 'meta.content.labels.experienceLevel',
                                     'Page' => 'meta.content.labels.page',
                                     'PageOf' => 'meta.content.label.pageOfs',
                                     'Years' => [
@@ -442,6 +444,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => 'meta.labels.competences',
                                     'MoreCompetences' => 'meta.labels.moreCompetences',
                                     'ExperienceInYears' => 'meta.labels.experienceInYears',
+                                    'ExperienceLevel' => 'meta.labels.experienceLevel',
                                     'Page' => 'meta.labels.page',
                                     'PageOf' => 'meta.labels.pageOf',
                                     'Years' => [
@@ -542,6 +545,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => 'meta.labels.competences',
                                     'MoreCompetences' => 'meta.labels.moreCompetences',
                                     'ExperienceInYears' => 'meta.labels.experienceInYears',
+                                    'ExperienceLevel' => 'meta.labels.experienceLevel',
                                     'Page' => 'meta.labels.page',
                                     'PageOf' => 'meta.labels.pageOf',
                                     'Years' => [
@@ -711,6 +715,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => 'meta.labels.competences',
                                     'MoreCompetences' => 'meta.labels.moreCompetences',
                                     'ExperienceInYears' => 'meta.labels.experienceInYears',
+                                    'ExperienceLevel' => 'meta.labels.experienceLevel',
                                     'Page' => 'meta.labels.page',
                                     'PageOf' => 'meta.labels.pageOf',
                                     'Years' => [
@@ -871,6 +876,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => 'meta.labels.competences',
                                     'MoreCompetences' => 'meta.labels.moreCompetences',
                                     'ExperienceInYears' => 'meta.labels.experienceInYears',
+                                    'ExperienceLevel' => 'meta.labels.experienceLevel',
                                     'Page' => 'meta.labels.page',
                                     'PageOf' => 'meta.labels.pageOf',
                                     'Years' => [
@@ -980,6 +986,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => '',
                                     'MoreCompetences' => '',
                                     'ExperienceInYears' => '',
+                                    'ExperienceLevel' => '',
                                     'Page' => '',
                                     'PageOf' => '',
                                     'Years' => [
@@ -1080,6 +1087,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => '',
                                     'MoreCompetences' => '',
                                     'ExperienceInYears' => '',
+                                    'ExperienceLevel' => '',
                                     'Page' => '',
                                     'PageOf' => '',
                                     'Years' => [
@@ -1140,6 +1148,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => '',
                                     'MoreCompetences' => '',
                                     'ExperienceInYears' => '',
+                                    'ExperienceLevel' => '',
                                     'Page' => '',
                                     'PageOf' => '',
                                     'Years' => [
@@ -1191,6 +1200,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
                                     'Competences' => '',
                                     'MoreCompetences' => '',
                                     'ExperienceInYears' => '',
+                                    'ExperienceLevel' => '',
                                     'Page' => '',
                                     'PageOf' => '',
                                     'Years' => [

@@ -64,6 +64,7 @@ class EmptyResume
                         competences: '',
                         moreCompetences: '',
                         experienceInYears: '',
+                        experienceLevel: '',
                         page: '',
                         pageOf: '',
                         years: new Years(singular: '', plural: ''),

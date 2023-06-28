@@ -23,14 +23,13 @@ class DomPdfRepository
 
         $domPdf = $this->domPdfBuilder->start(templateDirectory: $templateDirectoryPath);
 
-        if (isset($settings['fonts'])) {
-            foreach ($settings['fonts'] as $font) {
-                // todo validate and initialize those very early -> in command probably
+        if (isset($settings[DomPdfFont::KEY_FONTS])) {
+            foreach ($settings[DomPdfFont::KEY_FONTS] as $font) {
                 $domPdfFont = new DomPdfFont(
-                    family: $font['family'],
-                    style: $font['style'],
-                    weight: $font['weight'],
-                    fontFile: $font['fontFile'],
+                    family: $font[DomPdfFont::KEY_FAMILY],
+                    style: $font[DomPdfFont::KEY_STYLE],
+                    weight: $font[DomPdfFont::KEY_WEIGHT],
+                    fontFile: $font[DomPdfFont::KEY_FILE],
                 );
 
                 $domPdf = $this->domPdfBuilder->addFont(
@@ -42,20 +41,22 @@ class DomPdfRepository
 
         $domPdf = $this->domPdfBuilder->addHtml(domPdf: $domPdf, html: $html);
 
-        if (isset($settings['pageNumbers'])) {
-            $font = $domPdf->getFontMetrics()->getFont(familyRaw: $settings['pageNumbers']['font']);
+        if (isset($settings[DomPdfPageText::KEY_PAGE_NUMBERS])) {
+            $font = $domPdf->getFontMetrics()->getFont(
+                familyRaw: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_FONT],
+            );
+
             if (empty($font)) {
                 throw new \Exception('Unknown font, cant add pageNumbers');
             }
 
-            // todo validate and initialize those very early -> in command probably
             $pageText = new DomPdfPageText(
-                text: $settings['pageNumbers']['text'],
+                text: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_TEXT],
                 font: $font,
-                axisX: $settings['pageNumbers']['x'],
-                axisY: $settings['pageNumbers']['y'],
-                color: $settings['pageNumbers']['color'],
-                size: $settings['pageNumbers']['size'],
+                axisX: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_AXIS_X],
+                axisY: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_AXIS_Y],
+                color: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_COLOR],
+                size: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_SIZE],
             );
 
             $domPdf = $this->domPdfBuilder->addPageText(domPdf: $domPdf, pageText: $pageText);

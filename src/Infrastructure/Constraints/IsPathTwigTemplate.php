@@ -9,13 +9,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Compound;
 
 #[\Attribute]
-class StringExists extends Compound
+class IsPathTwigTemplate extends Compound
 {
     protected function getConstraints(array $options): array
     {
         return [
-            new Assert\Length(min: 0),
-            new Assert\Type(type: 'string'),
+            new IsPathExtension(extension: 'twig'),
+            new Assert\NotNull(),
+            new Assert\NotBlank(),
         ];
     }
 }

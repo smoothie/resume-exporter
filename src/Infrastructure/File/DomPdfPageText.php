@@ -6,6 +6,17 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 
 class DomPdfPageText
 {
+    public const KEY_PAGE_NUMBERS = 'pageNumbers';
+    public const KEY_TEXT = 'text';
+    public const KEY_FONT = 'font';
+    public const KEY_AXIS_X = 'x';
+    public const KEY_AXIS_Y = 'y';
+    public const KEY_COLOR = 'color';
+    public const KEY_SIZE = 'size';
+    public const KEY_WORD_SPACE = 'wordSpace';
+    public const KEY_CHAR_SPACE = 'charSpace';
+    public const KEY_ANGLE = 'angle';
+
     public function __construct(
         private readonly string $text,
         private readonly string $font,

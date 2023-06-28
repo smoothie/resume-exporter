@@ -21,6 +21,7 @@ class Labels
         private readonly string $competences,
         private readonly string $moreCompetences,
         private readonly string $experienceInYears,
+        private readonly string $experienceLevel,
         private readonly string $page,
         private readonly string $pageOf,
         private readonly Years $years,
@@ -70,6 +71,11 @@ class Labels
     public function experienceInYears(): string
     {
         return $this->experienceInYears;
+    }
+
+    public function experienceLevel(): string
+    {
+        return $this->experienceLevel;
     }
 
     public function page(): string

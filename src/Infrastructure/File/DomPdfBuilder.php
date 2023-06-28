@@ -6,6 +6,7 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Exception;
 
 class DomPdfBuilder
 {
@@ -15,7 +16,6 @@ class DomPdfBuilder
 
         $options = new Options();
         $options->setChroot($templateDirectory);
-        $options->setIsRemoteEnabled(true); // todo probably can be removed cause we can set fonts via settings
         $options->setFontDir($tmpDirectory);
         $options->setFontCache($tmpDirectory);
         $options->setTempDir($tmpDirectory);

@@ -1,0 +1,33 @@
+{% block tableProject %}
+    <table class="table -projects">
+        <tr class="table-row">
+            <td class="table-cell -min-small">
+                <p class="table-dates">{{ project['projectStartDate'] }} - {{ project['projectEndDate'] }}</p>
+            </td>
+            <td class="table-cell">
+                <h2 class="title -l">{{ project['projectName'] }}</h2>
+                <p class="subtitle">{{ project['projectDescription'] }}</p>
+            </td>
+        </tr>
+        <tr class="table-row">
+            <td class="table-cell"></td>
+            <td class="table-cell -left-space">
+                {% for projectHighlight in project['projectHighlights'] %}
+                    <p>{{ projectHighlight }}</p>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr class="table-row">
+            <td class="table-cell"></td>
+            <td class="table-cell">
+                <h3 class="title -m">{{ labelSkills }}</h3>
+            </td>
+        </tr>
+        <tr class="table-row">
+            <td class="table-cell"></td>
+            <td class="table-cell -left-space">
+                <p>{{ project['projectKeywords']|join(', ') }}</p>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

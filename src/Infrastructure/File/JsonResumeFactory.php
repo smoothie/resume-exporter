@@ -158,6 +158,7 @@ class JsonResumeFactory implements ReadResumeFactory
                             'Competences' => [new StringExists()],
                             'MoreCompetences' => [new StringExists()],
                             'ExperienceInYears' => [new StringExists()],
+                            'ExperienceLevel' => [new StringExists()],
                             'Page' => [new StringExists()],
                             'PageOf' => [new StringExists()],
                             'Years' => new Assert\Collection([
@@ -420,6 +421,7 @@ class JsonResumeFactory implements ReadResumeFactory
                 competences: $canonical['Meta']['Content']['Labels']['Competences'],
                 moreCompetences: $canonical['Meta']['Content']['Labels']['MoreCompetences'],
                 experienceInYears: $canonical['Meta']['Content']['Labels']['ExperienceInYears'],
+                experienceLevel: $canonical['Meta']['Content']['Labels']['ExperienceLevel'],
                 page: $canonical['Meta']['Content']['Labels']['Page'],
                 pageOf: $canonical['Meta']['Content']['Labels']['PageOf'],
                 years: new Years(

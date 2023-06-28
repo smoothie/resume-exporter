@@ -6,6 +6,12 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 
 class DomPdfFont
 {
+    public const KEY_FAMILY = 'family';
+    public const KEY_STYLE = 'style';
+    public const KEY_WEIGHT = 'weight';
+    public const KEY_FILE = 'fontFile';
+    public const KEY_FONTS = 'fonts';
+
     public function __construct(
         private readonly string $family,
         private readonly string $style,
@@ -16,7 +22,7 @@ class DomPdfFont
 
     public function getStyle(): array
     {
-        return ['family' => $this->family, 'style' => $this->style, 'weight' => $this->weight];
+        return [self::KEY_FAMILY => $this->family, self::KEY_STYLE => $this->style, self::KEY_WEIGHT => $this->weight];
     }
 
     public function getRemoteFile(): string

@@ -157,6 +157,7 @@ class ResumeFactory
                         competences: $resume['Meta']['Content']['Labels']['Competences'],
                         moreCompetences: $resume['Meta']['Content']['Labels']['MoreCompetences'],
                         experienceInYears: $resume['Meta']['Content']['Labels']['ExperienceInYears'],
+                        experienceLevel: $resume['Meta']['Content']['Labels']['ExperienceLevel'],
                         page: $resume['Meta']['Content']['Labels']['Page'],
                         pageOf: $resume['Meta']['Content']['Labels']['PageOf'],
                         years: new Years(

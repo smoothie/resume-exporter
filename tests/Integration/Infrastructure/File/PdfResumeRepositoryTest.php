@@ -29,14 +29,6 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  */
 class PdfResumeRepositoryTest extends BasicTestCase
 {
-    //    private vfsStreamDirectory $root;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        //        $this->root = vfsStream::setup('some');
-    }
-
     /**
      * @group integration-infrastructure-file-pdf-resume-repository-persist
      *
@@ -44,6 +36,8 @@ class PdfResumeRepositoryTest extends BasicTestCase
      */
     public function testPersist(array $assertions, array $expectations): void
     {
+        // todo: add not so good paths
+
         $filesystem = \Mockery::mock(FilesystemRepository::class);
         $filesystem->shouldReceive('save')->withArgs(
             function (string $outputPath, string $outputData) use ($expectations): bool {
@@ -357,6 +351,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                                         'Competences' => 'meta.content.labels.competences',
                                         'MoreCompetences' => 'meta.content.labels.moreCompetences',
                                         'ExperienceInYears' => 'meta.content.labels.experienceInYears',
+                                        'ExperienceLevel' => 'meta.content.labels.experienceLevel',
                                         'Page' => 'meta.content.labels.page',
                                         'PageOf' => 'meta.content.label.pageOfs',
                                         'Years' => [
@@ -423,6 +418,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                             '[Meta][Content][Labels][Competences]' => '[labelCompetences]',
                             '[Meta][Content][Labels][Education]' => '[labelEducation]',
                             '[Meta][Content][Labels][ExperienceInYears]' => '[labelExperienceInYears]',
+                            '[Meta][Content][Labels][ExperienceLevel]' => '[labelExperienceLevel]',
                             '[Meta][Content][Labels][Language]' => '[labelLanguage]',
                             '[Meta][Content][Labels][Languages]' => '[labelLanguages]',
                             '[Meta][Content][Labels][MoreCompetences]' => '[labelMoreCompetences]',
@@ -603,6 +599,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                                         'Competences' => 'meta.content.labels.competences',
                                         'MoreCompetences' => 'meta.content.labels.moreCompetences',
                                         'ExperienceInYears' => 'meta.content.labels.experienceInYears',
+                                        'ExperienceLevel' => 'meta.content.labels.experienceLevel',
                                         'Page' => 'meta.content.labels.page',
                                         'PageOf' => 'meta.content.label.pageOfs',
                                         'Years' => [
@@ -620,7 +617,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                     'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
                 ],
             ],
-            'draft_with_page_numbers' => [
+            'with_page_numbers' => [
                 'assertions' => [
                     'output' => [
                         'mapSource' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/map.json',
@@ -663,6 +660,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                             '[Meta][Content][Labels][Competences]' => '[labelCompetences]',
                             '[Meta][Content][Labels][Education]' => '[labelEducation]',
                             '[Meta][Content][Labels][ExperienceInYears]' => '[labelExperienceInYears]',
+                            '[Meta][Content][Labels][ExperienceLevel]' => '[labelExperienceLevel]',
                             '[Meta][Content][Labels][Language]' => '[labelLanguage]',
                             '[Meta][Content][Labels][Languages]' => '[labelLanguages]',
                             '[Meta][Content][Labels][MoreCompetences]' => '[labelMoreCompetences]',
@@ -843,6 +841,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                                         'Competences' => 'meta.content.labels.competences',
                                         'MoreCompetences' => 'meta.content.labels.moreCompetences',
                                         'ExperienceInYears' => 'meta.content.labels.experienceInYears',
+                                        'ExperienceLevel' => 'meta.content.labels.experienceLevel',
                                         'Page' => 'meta.content.labels.page',
                                         'PageOf' => 'meta.content.label.pageOfs',
                                         'Years' => [
@@ -936,6 +935,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                             '[Meta][Content][Labels][Competences]' => '[labelCompetences]',
                             '[Meta][Content][Labels][Education]' => '[labelEducation]',
                             '[Meta][Content][Labels][ExperienceInYears]' => '[labelExperienceInYears]',
+                            '[Meta][Content][Labels][ExperienceLevel]' => '[labelExperienceLevel]',
                             '[Meta][Content][Labels][Language]' => '[labelLanguage]',
                             '[Meta][Content][Labels][Languages]' => '[labelLanguages]',
                             '[Meta][Content][Labels][MoreCompetences]' => '[labelMoreCompetences]',
@@ -1116,6 +1116,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                                         'Competences' => 'meta.content.labels.competences',
                                         'MoreCompetences' => 'meta.content.labels.moreCompetences',
                                         'ExperienceInYears' => 'meta.content.labels.experienceInYears',
+                                        'ExperienceLevel' => 'meta.content.labels.experienceLevel',
                                         'Page' => 'meta.content.labels.page',
                                         'PageOf' => 'meta.content.label.pageOfs',
                                         'Years' => [
@@ -1145,6 +1146,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                         'labelCompetences' => 'meta.content.labels.competences',
                         'labelEducation' => 'meta.content.labels.education',
                         'labelExperienceInYears' => 'meta.content.labels.experienceInYears',
+                        'labelExperienceLevel' => 'meta.content.labels.experienceLevel',
                         'labelLanguage' => 'meta.content.labels.language',
                         'labelLanguages' => 'meta.content.labels.languages',
                         'labelMoreCompetences' => 'meta.content.labels.moreCompetences',

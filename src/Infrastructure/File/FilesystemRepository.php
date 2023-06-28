@@ -7,21 +7,22 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 use Smoothie\ResumeExporter\Application\Mapping\FilesystemRepository as WriteFilesystemContract;
 use Smoothie\ResumeExporter\Domain\Mapping\Exceptions\UnableToParseJsonException;
 use Smoothie\ResumeExporter\Domain\Mapping\FilesystemRepository as ReadFilesystemContract;
+use Symfony\Component\Filesystem\Filesystem;
 
 class FilesystemRepository implements ReadFilesystemContract, WriteFilesystemContract
 {
-    public function __construct(private readonly FilesystemRepository $filesystem)
+    public function __construct(private readonly Filesystem $filesystem)
     {
     }
 
     public function exists(string $path): bool
     {
-        return $this->filesystem->exists(path: $path);
+        return $this->filesystem->exists(files: $path);
     }
 
     public function isAbsolutePath(string $path): bool
     {
-        return $this->filesystem->isAbsolutePath(path: $path);
+        return $this->filesystem->isAbsolutePath(file: $path);
     }
 
     public function getFileContents(string $path): string
