@@ -36,8 +36,6 @@ class PdfResumeRepositoryTest extends BasicTestCase
      */
     public function testPersist(array $assertions, array $expectations): void
     {
-        // todo: add not so good paths
-
         $filesystem = \Mockery::mock(FilesystemRepository::class);
         $filesystem->shouldReceive('save')->withArgs(
             function (string $outputPath, string $outputData) use ($expectations): bool {
@@ -140,9 +138,9 @@ class PdfResumeRepositoryTest extends BasicTestCase
             'simple_without_settings' => [
                 'assertions' => [
                     'output' => [
-                        'mapSource' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/map.json',
-                        'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
-                        'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
+                        'mapSource' => 'unused',
+                        'outputPath' => 'unused',
+                        'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
                         'outputFormat' => $outputFormat,
                         'mapSettings' => [],
                         'map' => [
@@ -365,16 +363,16 @@ class PdfResumeRepositoryTest extends BasicTestCase
                     ],
                 ],
                 'expectations' => [
-                    'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
-                    'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
+                    'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
+                    'outputPath' => 'unused',
                 ],
             ],
             'with_two_valid_fonts' => [
                 'assertions' => [
                     'output' => [
-                        'mapSource' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/map.json',
-                        'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
-                        'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
+                        'mapSource' => 'unused',
+                        'outputPath' => 'unused',
+                        'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
                         'outputFormat' => $outputFormat,
                         'mapSettings' => [
                             'fonts' => [
@@ -613,16 +611,16 @@ class PdfResumeRepositoryTest extends BasicTestCase
                     ],
                 ],
                 'expectations' => [
-                    'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
-                    'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
+                    'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
+                    'outputPath' => 'unused',
                 ],
             ],
             'with_page_numbers' => [
                 'assertions' => [
                     'output' => [
-                        'mapSource' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/map.json',
-                        'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
-                        'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
+                        'mapSource' => 'unused',
+                        'outputPath' => 'unused',
+                        'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
                         'outputFormat' => $outputFormat,
                         'mapSettings' => [
                             'pageNumbers' => [
@@ -855,8 +853,8 @@ class PdfResumeRepositoryTest extends BasicTestCase
                     ],
                 ],
                 'expectations' => [
-                    'templatePath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/en-template.html.twig',
-                    'outputPath' => '/home/vagrant/spielwiese/resume-exporter/resources/stale/some/output.pdf',
+                    'templatePath' => $this->getTemplateDoublesDirectory('TwigPdf/template.html.twig'),
+                    'outputPath' => 'unused',
                 ],
             ],
         ];

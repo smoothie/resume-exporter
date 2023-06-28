@@ -893,45 +893,50 @@ class ExportCommandTest extends BasicKernelTestCase
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.overview
+                        <div style="page-break-before:always; page-break-after:always"><div><p>basic.nameImage not found or type unknown
+                        </p>
+                        <p>basic.name
+                        </p>
+                        <p><i>basic.location.address
+                        basic.location.postalCode basic.location.city
+                        basic.email
+                        basic.phone
+                        </i></p>
+                        <p><b>meta.content.labels.overview
                         </b></p>
                         <p><b>basic.label
-                        </b>basic.summary
+                        </b></p>
+                        <p>basic.summary
                         </p>
-                        <p><b>basic.overview.items.0.label
-                        </b>basic.overview.items.0.value
+                        <p>basic.overview.items.0.label
                         </p>
-                        <p><b>basic.overview.items.1.label
-                        </b>basic.overview.items.1.value
+                        <p>basic.overview.items.0.value
                         </p>
-                        <p><b>basic.overview.items.*.label
-                        </b>basic.overview.items.*.value
+                        <p>basic.overview.items.1.label
                         </p>
-                        <p><b>basic.profiles.0.network
-                        </b>basic.profiles.0.username
+                        <p>basic.overview.items.1.value
                         </p>
-                        <p><b>basic.profiles.*.network
-                        </b>basic.profiles.*.username
+                        <p>basic.overview.items.*.label
                         </p>
-                        <p>basic.nameImage not found or type unknown <b>basic.name
-                        </b>basic.location.address
+                        <p>basic.overview.items.*.value
                         </p>
-                        <p>basic.location.postalCode basic.location.city
-                        basic.email
+                        <p>basic.profiles.0.network
                         </p>
-                        <p>basic.phone</p>
+                        <p>basic.profiles.0.username
+                        </p>
+                        <p>basic.profiles.*.network
+                        </p>
+                        <p>basic.profiles.*.username
+                        </p>
+                        <p><b>meta.content.labels.projects
+                        </b></p>
+                        <p>projects.0.startDate - projects.0.endDate
+                        <b>projects.0.name
+                        </b></p>
+                        <p>projects.0.description</p>
 
                         </div></div>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.projects
-                        </b></p>
-                        <p>projects.0.startDate
-                        -
-                        projects.0.endDate
-                        </p>
-                        <p><b>projects.0.name
-                        </b>projects.0.description
-                        </p>
-                        <p>projects.0.highlights.0
+                        <div style="page-break-before:always; page-break-after:always"><div><p>projects.0.highlights.0
                         </p>
                         <p>projects.0.highlights.1
                         </p>
@@ -940,35 +945,31 @@ class ExportCommandTest extends BasicKernelTestCase
                         <p>projects.0.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.0.keywords.*
+                        </b></p>
+                        <p>projects.0.keywords.*
                         </p>
-                        <p>projects.*.startDate
-                        -
-                        projects.*.endDate
-                        </p>
-                        <p><b>projects.*.name
-                        </b>projects.*.description
+                        <p>projects.*.startDate - projects.*.endDate
+                        <b>projects.*.name
+                        </b></p>
+                        <p>projects.*.description
                         </p>
                         <p>projects.*.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.*.keywords.*
+                        </b></p>
+                        <p>projects.*.keywords.*
                         </p>
                         <p><b>meta.content.labels.education
                         </b></p>
-                        <p>education.0.startDate
-                        -
-                        education.0.endDate
+                        <p>education.0.startDate - education.0.endDate
+                        <b>education.0.area
+                        </b></p>
+                        <p>education.0.studyType
                         </p>
-                        <p><b>education.0.area
-                        </b>education.0.studyType
-                        </p>
-                        <p>education.1.startDate
-                        -
-                        education.1.endDate
-                        </p>
-                        <p><b>education.1.area
-                        </b>education.1.studyType
+                        <p>education.1.startDate - education.1.endDate
+                        <b>education.1.area
+                        </b></p>
+                        <p>education.1.studyType
                         </p>
                         <p><b>meta.content.labels.languages
                         </b></p>
@@ -1151,45 +1152,50 @@ class ExportCommandTest extends BasicKernelTestCase
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.overview
+                        <div style="page-break-before:always; page-break-after:always"><div><p>basic.nameImage not found or type unknown
+                        </p>
+                        <p>basic.name
+                        </p>
+                        <p><i>basic.location.address
+                        basic.location.postalCode basic.location.city
+                        basic.email
+                        basic.phone
+                        </i></p>
+                        <p><b>meta.content.labels.overview
                         </b></p>
                         <p><b>basic.label
-                        </b>basic.summary
+                        </b></p>
+                        <p>basic.summary
                         </p>
-                        <p><b>basic.overview.items.0.label
-                        </b>basic.overview.items.0.value
+                        <p>basic.overview.items.0.label
                         </p>
-                        <p><b>basic.overview.items.1.label
-                        </b>basic.overview.items.1.value
+                        <p>basic.overview.items.0.value
                         </p>
-                        <p><b>basic.overview.items.*.label
-                        </b>basic.overview.items.*.value
+                        <p>basic.overview.items.1.label
                         </p>
-                        <p><b>basic.profiles.0.network
-                        </b>basic.profiles.0.username
+                        <p>basic.overview.items.1.value
                         </p>
-                        <p><b>basic.profiles.*.network
-                        </b>basic.profiles.*.username
+                        <p>basic.overview.items.*.label
                         </p>
-                        <p>basic.nameImage not found or type unknown <b>basic.name
-                        </b>basic.location.address
+                        <p>basic.overview.items.*.value
                         </p>
-                        <p>basic.location.postalCode basic.location.city
-                        basic.email
+                        <p>basic.profiles.0.network
                         </p>
-                        <p>basic.phone</p>
+                        <p>basic.profiles.0.username
+                        </p>
+                        <p>basic.profiles.*.network
+                        </p>
+                        <p>basic.profiles.*.username
+                        </p>
+                        <p><b>meta.content.labels.projects
+                        </b></p>
+                        <p>projects.0.startDate - projects.0.endDate
+                        <b>projects.0.name
+                        </b></p>
+                        <p>projects.0.description</p>
 
                         </div></div>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.projects
-                        </b></p>
-                        <p>projects.0.startDate
-                        -
-                        projects.0.endDate
-                        </p>
-                        <p><b>projects.0.name
-                        </b>projects.0.description
-                        </p>
-                        <p>projects.0.highlights.0
+                        <div style="page-break-before:always; page-break-after:always"><div><p>projects.0.highlights.0
                         </p>
                         <p>projects.0.highlights.1
                         </p>
@@ -1198,35 +1204,31 @@ class ExportCommandTest extends BasicKernelTestCase
                         <p>projects.0.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.0.keywords.*
+                        </b></p>
+                        <p>projects.0.keywords.*
                         </p>
-                        <p>projects.*.startDate
-                        -
-                        projects.*.endDate
-                        </p>
-                        <p><b>projects.*.name
-                        </b>projects.*.description
+                        <p>projects.*.startDate - projects.*.endDate
+                        <b>projects.*.name
+                        </b></p>
+                        <p>projects.*.description
                         </p>
                         <p>projects.*.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.*.keywords.*
+                        </b></p>
+                        <p>projects.*.keywords.*
                         </p>
                         <p><b>meta.content.labels.education
                         </b></p>
-                        <p>education.0.startDate
-                        -
-                        education.0.endDate
+                        <p>education.0.startDate - education.0.endDate
+                        <b>education.0.area
+                        </b></p>
+                        <p>education.0.studyType
                         </p>
-                        <p><b>education.0.area
-                        </b>education.0.studyType
-                        </p>
-                        <p>education.1.startDate
-                        -
-                        education.1.endDate
-                        </p>
-                        <p><b>education.1.area
-                        </b>education.1.studyType
+                        <p>education.1.startDate - education.1.endDate
+                        <b>education.1.area
+                        </b></p>
+                        <p>education.1.studyType
                         </p>
                         <p><b>meta.content.labels.languages
                         </b></p>
@@ -1403,47 +1405,52 @@ class ExportCommandTest extends BasicKernelTestCase
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.overview
+                        <div style="page-break-before:always; page-break-after:always"><div><p>basic.nameImage not found or type unknown
+                        </p>
+                        <p>basic.name
+                        </p>
+                        <p><i>basic.location.address
+                        basic.location.postalCode basic.location.city
+                        basic.email
+                        basic.phone
+                        </i></p>
+                        <p><b>meta.content.labels.overview
                         </b></p>
                         <p><b>basic.label
-                        </b>basic.summary
+                        </b></p>
+                        <p>basic.summary
                         </p>
-                        <p><b>basic.overview.items.0.label
-                        </b>basic.overview.items.0.value
+                        <p>basic.overview.items.0.label
                         </p>
-                        <p><b>basic.overview.items.1.label
-                        </b>basic.overview.items.1.value
+                        <p>basic.overview.items.0.value
                         </p>
-                        <p><b>basic.overview.items.*.label
-                        </b>basic.overview.items.*.value
+                        <p>basic.overview.items.1.label
                         </p>
-                        <p><b>basic.profiles.0.network
-                        </b>basic.profiles.0.username
+                        <p>basic.overview.items.1.value
                         </p>
-                        <p><b>basic.profiles.*.network
-                        </b>basic.profiles.*.username
+                        <p>basic.overview.items.*.label
                         </p>
-                        <p>basic.nameImage not found or type unknown <b>basic.name
-                        </b>basic.location.address
+                        <p>basic.overview.items.*.value
                         </p>
-                        <p>basic.location.postalCode basic.location.city
-                        basic.email
+                        <p>basic.profiles.0.network
                         </p>
-                        <p>basic.phone
+                        <p>basic.profiles.0.username
+                        </p>
+                        <p>basic.profiles.*.network
+                        </p>
+                        <p>basic.profiles.*.username
+                        </p>
+                        <p><b>meta.content.labels.projects
+                        </b></p>
+                        <p>projects.0.startDate - projects.0.endDate
+                        <b>projects.0.name
+                        </b></p>
+                        <p>projects.0.description
                         </p>
                         <p>Page 1 of 3</p>
 
                         </div></div>
-                        <div style="page-break-before:always; page-break-after:always"><div><p><b>meta.content.labels.projects
-                        </b></p>
-                        <p>projects.0.startDate
-                        -
-                        projects.0.endDate
-                        </p>
-                        <p><b>projects.0.name
-                        </b>projects.0.description
-                        </p>
-                        <p>projects.0.highlights.0
+                        <div style="page-break-before:always; page-break-after:always"><div><p>projects.0.highlights.0
                         </p>
                         <p>projects.0.highlights.1
                         </p>
@@ -1452,43 +1459,37 @@ class ExportCommandTest extends BasicKernelTestCase
                         <p>projects.0.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.0.keywords.*
+                        </b></p>
+                        <p>projects.0.keywords.*
                         </p>
-                        <p>projects.*.startDate
-                        -
-                        projects.*.endDate
-                        </p>
-                        <p><b>projects.*.name
-                        </b>projects.*.description
+                        <p>projects.*.startDate - projects.*.endDate
+                        <b>projects.*.name
+                        </b></p>
+                        <p>projects.*.description
                         </p>
                         <p>projects.*.highlights.*
                         </p>
                         <p><b>meta.content.labels.skills
-                        </b>projects.*.keywords.*
+                        </b></p>
+                        <p>projects.*.keywords.*
                         </p>
                         <p><b>meta.content.labels.education
                         </b></p>
-                        <p>education.0.startDate
-                        -
-                        education.0.endDate
+                        <p>education.0.startDate - education.0.endDate
+                        <b>education.0.area
+                        </b></p>
+                        <p>education.0.studyType
                         </p>
-                        <p><b>education.0.area
-                        </b>education.0.studyType
-                        </p>
-                        <p>education.1.startDate
-                        -
-                        education.1.endDate
-                        </p>
-                        <p><b>education.1.area
-                        </b>education.1.studyType
+                        <p>education.1.startDate - education.1.endDate
+                        <b>education.1.area
+                        </b></p>
+                        <p>education.1.studyType
                         </p>
                         <p><b>meta.content.labels.languages
                         </b></p>
                         <p><b>meta.content.labels.language meta.content.labels.experienceInYears
                         </b></p>
-                        <p>languages.*.language languages.*.fluency
-                        </p>
-                        <p>Page 2 of 3</p>
+                        <p>languages.*.language languages.*.fluency Page 2 of 3</p>
 
                         </div></div>
                         <div style="page-break-before:always; page-break-after:always"><div><p><b>skills.0.name
