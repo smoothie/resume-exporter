@@ -17,6 +17,11 @@ class Languages
         Assert::allIsInstanceOf(value: $languages, class: Language::class);
     }
 
+    /**
+     * @return Language[]
+     *
+     * @psalm-return array<Language>
+     */
     public function languages(): array
     {
         return $this->languages;

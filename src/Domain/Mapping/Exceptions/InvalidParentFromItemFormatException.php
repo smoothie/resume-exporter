@@ -18,6 +18,11 @@ class InvalidParentFromItemFormatException extends \Exception implements Excepti
         parent::__construct(message: $message, code: static::CODE_UNABLE_TO_FIND_PARENT_ITEM_FROM);
     }
 
+    /**
+     * @return (array|mixed|string)[]
+     *
+     * @psalm-return array{parentItem: string, parentItemValue: mixed, from: array}
+     */
     public function getContext(): array
     {
         return [

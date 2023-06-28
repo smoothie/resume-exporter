@@ -17,6 +17,11 @@ class Projects
         Assert::allIsInstanceOf(value: $projects, class: Project::class);
     }
 
+    /**
+     * @return Project[]
+     *
+     * @psalm-return array<Project>
+     */
     public function projects(): array
     {
         return $this->projects;

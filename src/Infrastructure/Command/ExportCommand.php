@@ -63,6 +63,9 @@ class ExportCommand extends Command
             );
     }
 
+    /**
+     * @psalm-return 0|2
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $input->validate();
@@ -133,6 +136,11 @@ class ExportCommand extends Command
         }
     }
 
+    /**
+     * @return (\Stringable|string)[][]
+     *
+     * @psalm-return array<string, list{\Stringable|string,...}>
+     */
     private function translateViolationsIntoArray(
         ConstraintViolationListInterface $violations,
         string $keyPrefix = '',

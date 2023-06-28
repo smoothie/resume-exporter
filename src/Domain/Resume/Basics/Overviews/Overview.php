@@ -22,6 +22,11 @@ class Overview
         Assert::allIsInstanceOf(value: $items, class: Item::class);
     }
 
+    /**
+     * @return Item[]
+     *
+     * @psalm-return array<Item>
+     */
     public function items(): array
     {
         return $this->items;

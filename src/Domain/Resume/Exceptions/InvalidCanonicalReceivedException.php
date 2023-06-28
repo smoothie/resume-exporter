@@ -17,6 +17,11 @@ class InvalidCanonicalReceivedException extends \Exception implements ExceptionC
         parent::__construct(message: $message, code: static::CODE_INVALID_CANONICAL_RECEIVED);
     }
 
+    /**
+     * @return array[]
+     *
+     * @psalm-return array{violations: array, input: array}
+     */
     public function getContext(): array
     {
         return [

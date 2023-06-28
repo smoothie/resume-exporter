@@ -11,6 +11,11 @@ use Symfony\Component\Validator\Constraints\Compound;
 #[\Attribute]
 class StringExists extends Compound
 {
+    /**
+     * @return (Assert\Length|Assert\Type)[]
+     *
+     * @psalm-return list{Assert\Length, Assert\Type}
+     */
     protected function getConstraints(array $options): array
     {
         return [

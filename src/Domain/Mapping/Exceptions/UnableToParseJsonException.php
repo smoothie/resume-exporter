@@ -17,6 +17,11 @@ class UnableToParseJsonException extends \Exception implements ExceptionContract
         parent::__construct(message: $message, code: static::CODE_UNABLE_TO_PARSE_JSON, previous: $previousException);
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{path: string}
+     */
     public function getContext(): array
     {
         return [

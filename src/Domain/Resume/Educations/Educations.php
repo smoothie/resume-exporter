@@ -17,6 +17,11 @@ class Educations
         Assert::allIsInstanceOf(value: $educations, class: Education::class);
     }
 
+    /**
+     * @return Education[]
+     *
+     * @psalm-return array<Education>
+     */
     public function educations(): array
     {
         return $this->educations;

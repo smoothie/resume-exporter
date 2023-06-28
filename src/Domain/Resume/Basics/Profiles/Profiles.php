@@ -17,6 +17,11 @@ class Profiles
         Assert::allIsInstanceOf(value: $profiles, class: Profile::class);
     }
 
+    /**
+     * @return Profile[]
+     *
+     * @psalm-return array<Profile>
+     */
     public function profiles(): array
     {
         return $this->profiles;

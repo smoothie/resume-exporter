@@ -64,11 +64,19 @@ class MapItems implements \Countable
         return new self($new);
     }
 
+    /**
+     * @psalm-return int<0, max>
+     */
     public function count(): int
     {
         return \count($this->items);
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return array<string, string>
+     */
     public function toArray(string $type = 'ALL'): array
     {
         $typeItems = match ($type) {

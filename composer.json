@@ -29,6 +29,7 @@
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
+        "jetbrains/phpstorm-attributes": "^1.0",
         "mikey179/vfsstream": "^1.6",
         "mockery/mockery": "^1.5",
         "php-pdfbox/php-pdfbox": "dev-php8development"

@@ -68,7 +68,7 @@ class PropertyAccessStrategy implements MappingStrategy
      */
     public function normalize(array $map, array $from, array $settings): array
     {
-        $mapItems = $this->propertyAccessMapItemsFactory->createMapItems(map: $map);
+        $mapItems = $this->propertyAccessMapItemsFactory->createMapItems(map: $map, settings: $settings);
         $mapArrayItems = $mapItems->getArrayItems();
         $highestDepth = $mapItems->getHighestDepth();
 

@@ -18,6 +18,11 @@ class UnableToFindParentFromItemException extends \Exception implements Exceptio
         parent::__construct(message: $message, code: static::CODE_UNABLE_TO_FIND_PARENT_ITEM_FROM);
     }
 
+    /**
+     * @return (array|string)[]
+     *
+     * @psalm-return array{fromItem: string, toItem: string, from: array}
+     */
     public function getContext(): array
     {
         return [

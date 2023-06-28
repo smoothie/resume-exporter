@@ -30,6 +30,11 @@ class Skill
         return $this->label;
     }
 
+    /**
+     * @return DetailedKeyword[]
+     *
+     * @psalm-return array<DetailedKeyword>
+     */
     public function detailedKeywords(): array
     {
         return $this->detailedKeywords;

@@ -17,6 +17,11 @@ class Skills
         Assert::allIsInstanceOf(value: $skills, class: Skill::class);
     }
 
+    /**
+     * @return Skill[]
+     *
+     * @psalm-return array<Skill>
+     */
     public function skills(): array
     {
         return $this->skills;

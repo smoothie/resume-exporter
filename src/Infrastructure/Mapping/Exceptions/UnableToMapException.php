@@ -20,6 +20,11 @@ class UnableToMapException extends \Exception implements ExceptionContract
         parent::__construct(message: $message, code: static::CODE_PROPERTIES_NOT_FOUND);
     }
 
+    /**
+     * @return array[]
+     *
+     * @psalm-return array{invalidItems: array, unreadableItems: array, invalidArrayItems: array, from: array, map: array}
+     */
     public function getContext(): array
     {
         return [

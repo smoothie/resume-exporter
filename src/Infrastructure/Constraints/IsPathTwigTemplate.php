@@ -11,6 +11,11 @@ use Symfony\Component\Validator\Constraints\Compound;
 #[\Attribute]
 class IsPathTwigTemplate extends Compound
 {
+    /**
+     * @return (Assert\NotBlank|Assert\NotNull|IsPathExtension)[]
+     *
+     * @psalm-return list{IsPathExtension, Assert\NotNull, Assert\NotBlank}
+     */
     protected function getConstraints(array $options): array
     {
         return [

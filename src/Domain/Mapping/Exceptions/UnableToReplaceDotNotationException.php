@@ -21,6 +21,11 @@ class UnableToReplaceDotNotationException extends \Exception implements Exceptio
         );
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{haystack: string, needle: string, replace: string}
+     */
     public function getContext(): array
     {
         return [

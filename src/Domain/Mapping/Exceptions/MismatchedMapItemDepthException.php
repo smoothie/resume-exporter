@@ -20,6 +20,11 @@ class MismatchedMapItemDepthException extends \Exception implements ExceptionCon
         parent::__construct(message: $message, code: static::CODE_MISMATCHED_MAP_ITEM_DEPTH);
     }
 
+    /**
+     * @return (array|int|string)[]
+     *
+     * @psalm-return array{fromItem: string, toItem: string, fromItemDepth: int, toItemDepth: int, map: array}
+     */
     public function getContext(): array
     {
         return [

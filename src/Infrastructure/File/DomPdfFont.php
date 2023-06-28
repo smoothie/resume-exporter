@@ -20,6 +20,11 @@ class DomPdfFont
     ) {
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{family: string, style: string, weight: string}
+     */
     public function getStyle(): array
     {
         return [self::KEY_FAMILY => $this->family, self::KEY_STYLE => $this->style, self::KEY_WEIGHT => $this->weight];

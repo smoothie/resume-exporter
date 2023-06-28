@@ -59,6 +59,11 @@ class Resume
         return $this->meta;
     }
 
+    /**
+     * @return ((((mixed|string)[]|mixed|string)[]|mixed|string)[]|string)[][]
+     *
+     * @psalm-return array{Basic: array{Email: string, Label: string, Name: string, Phone: string, Summary: string, Url: string, Location: array{Address: string, City: string, CountryCode: string, PostalCode: string}, Profiles: list{0?: array{Network: mixed, Url: mixed, Username: mixed},...}, Overview: array{Items: list{0?: array{Label: mixed, Value: mixed},...}}}, Education: list{0?: array{Area: mixed, EndDate: mixed, StartDate: mixed, StudyType: mixed},...}, Languages: list{0?: array{Language: mixed, Fluency: mixed},...}, Projects: list{0?: array{Name: mixed, Description: mixed, Entity: mixed, Type: mixed, StartDate: mixed, EndDate: mixed, Highlights: list{0?: mixed,...}, Keywords: list{0?: mixed,...}, Roles: list{0?: mixed,...}},...}, Skills: list{0?: array{Name: mixed, Label: mixed, DetailedKeywords: list{0?: array{Keyword: mixed, Level: mixed, ExperienceInYears: mixed},...}},...}, Meta: array{Canonical: string, Version: string, LastModified: string, Internal: array{ResumeId: string}, Content: array{Labels: array{Skills: string, Languages: string, Language: string, Overview: string, Projects: string, Education: string, Competences: string, MoreCompetences: string, ExperienceInYears: string, ExperienceLevel: string, Page: string, PageOf: string, Years: array{Singular: string, Plural: string}}}}}
+     */
     public function toArray(): array
     {
         $resume = clone $this;

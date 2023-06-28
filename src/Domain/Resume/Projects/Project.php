@@ -59,16 +59,31 @@ class Project
         return $this->endDate;
     }
 
+    /**
+     * @return Highlight[]
+     *
+     * @psalm-return array<Highlight>
+     */
     public function highlights(): array
     {
         return $this->highlights;
     }
 
+    /**
+     * @return Keyword[]
+     *
+     * @psalm-return array<Keyword>
+     */
     public function keywords(): array
     {
         return $this->keywords;
     }
 
+    /**
+     * @return Role[]
+     *
+     * @psalm-return array<Role>
+     */
     public function roles(): array
     {
         return $this->roles;
