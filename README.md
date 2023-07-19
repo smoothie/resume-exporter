@@ -122,32 +122,6 @@ The application expects absolute paths only.
 
 So when you pass an incoming out outputting document/map, be aware of that.
 
-### Cloning Blocks PHPWord
-
-**Error:**
-
-> Can not clone row, template variable not found or variable contains markup.
-
-
-**Fix:**
-
-Might be related to a limit on PCRE stack size. We can increase those:
-
-```bash
-php -dpcre.backtrack_limit=250000000 -dpcre.recursion_limit=250000000 bin/console
-```
-
-or
-
-```php
-ini_set("pcre.backtrack_limit", "250000000");
-ini_set("pcre.recursion_limit", "250000000");
-```
-
-**Source:** https://github.com/PHPOffice/PHPWord/issues/2217
-
-*Note.. it might be an option to increase the stacksize, but I haven't digged into that yet.*
-
 ## Maps
 
 ### Available canonical fields
