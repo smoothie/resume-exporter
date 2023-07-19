@@ -45,7 +45,7 @@ The dependencies for those are living in the ./infrastructure directory.
 
 ## Wishlist
 ```md
-[] Full JSONResume support
+[ ] Full JSONResume support
     [x] Basics
     [x] Education
     [x] Skills
@@ -53,29 +53,31 @@ The dependencies for those are living in the ./infrastructure directory.
     [x] Meta
     [x] Custom Properties
     [x] Languages
-    [] Work
-    [] Volunteer
-    [] Awards
-    [] Certificates
-[] Publications
-[] Interests
-[] Slim down dependencies (eg. we do not need the complete framework bundle).
-[] Support for splitting resume into multiple files.
-[] Support for other standards besides JSON Resume.
-[] Support relative paths (cli).
-[] Support for output filters (eg. sort experience in years by [level desc, years desc, skills keyword asc]).
-[] Make singular/plural in maps optional.
-[] map/normalization into domain space (eg. Extract Asterisk)
-[] QA: Add psalm type for canonical array
-[] Allow null/empty values
-[] Reiterate on MapItem in domain space
+    [ ] Work
+    [ ] Volunteer
+    [ ] Awards
+    [ ] Certificates
+[ ] Publications
+[ ] Interests
+[ ] Slim down dependencies (eg. we do not need the complete framework bundle).
+[ ] Support for splitting resume into multiple files.
+[ ] Support for other standards besides JSON Resume.
+[ ] Support relative paths (cli).
+[ ] Support for output filters (eg. sort experience in years by [level desc, years desc, skills keyword asc]).
+[ ] Make singular/plural in maps optional.
+[ ] map/normalization into domain space (eg. Extract Asterisk)
+[ ] QA: Add psalm type for canonical array
+[ ] Allow null/empty values
+[ ] Reiterate on MapItem in domain space
     -> is Array Notation a Domain thing? if yes, define it. if no what is the abstract thing of it?
     -> what are from/to items?
     -> how can we simplify the creation of the map items? or do we need more MappingStrategies to learn more about those?
-[] DomPDF: allow overriding chroot in settings
-[] DomPDF: allow enabling remote content
-[] CLI: warn when output file already exist
-[] CLI: add force option to override output file when it already exists
+[ ] DomPDF: allow overriding chroot in settings
+[ ] DomPDF: allow enabling remote content
+[ ] CLI: warn when output file already exist
+[ ] CLI: add force option to override output file when it already exists
+[ ] Settings: Add support for placeholder "increment" eg. file-xy-%i would result in "file-xy-1" or "file-xy-2". Depends if the file already exists.
+[ ] Settings: Add support for placeholder "date-time" eg. file-%Y-m-d-h-i-s would result in "file-2023-01-23-12-00-01".
 ```
 
 ## Limitations
