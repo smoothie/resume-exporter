@@ -81,15 +81,15 @@ The dependencies for those are living in the ./infrastructure directory.
 - [ ] FEATURE: Add support for placeholder "increment" eg. file-xy-%i would result in "file-xy-1" or "file-xy-2". Depends if the file already exists.
 - [ ] FEATURE: Add support for placeholder "date-time" eg. file-%Y-m-d-h-i-s would result in "file-2023-01-23-12-00-01".
 - [ ] DOCS: Explain current decisions on:
-- [ ] Mapping - Canonical
-- [ ] Canonical Naming
-- [ ] Templating
-- [ ] ADR - which PDF library
-- [ ] ADR - how to handle paths (absolute/relative)
-- [ ] ADR - how to structure input map
-- [ ] ADR - how to structure output map
-- [ ] ADR - how to structure the resume
-- [ ] ADR - what basis for canonical naming
+  - [ ] Mapping - Canonical
+  - [ ] Canonical Naming
+  - [ ] Templating
+  - [ ] ADR - which PDF library
+  - [ ] ADR - how to handle paths (absolute/relative)
+  - [ ] ADR - how to structure input map
+  - [ ] ADR - how to structure output map
+  - [ ] ADR - how to structure the resume
+  - [ ] ADR - what basis for canonical naming
 
 ## Limitations
 
