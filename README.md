@@ -45,51 +45,51 @@ The dependencies for those are living in the ./infrastructure directory.
 
 ## Wishlist
 
-[ ] FEATURE: Full JSONResume support
-[x] Basics
-[x] Education
-[x] Skills
-[x] Projects
-[x] Meta
-[x] Custom Properties
-[x] Languages
-[ ] Work
-[ ] Volunteer
-[ ] Awards
-[ ] Certificates
-[ ] Publications
-[ ] Interests
-[ ] CHORE: Slim down dependencies (eg. we do not need the complete framework bundle).
-[ ] FEATURE: Support for splitting resume into multiple files.
-[ ] FEATURE: Support for other standards besides JSON Resume.
-[ ] FEATURE: Support relative paths (cli).
-[ ] FEATURE: Support for output filters (eg. sort experience in years by [level desc, years desc, skills keyword asc]).
-[ ] FEATURE: Make singular/plural in maps optional.
-[ ] REFACTOR: map/normalization into domain space (eg. Extract Asterisk)
-[ ] QA: Add psalm type for canonical array
-[ ] FEATURE: Allow null/empty values
-[ ] REFACTOR: Reiterate on MapItem in domain space
+- [ ] FEATURE: Full JSONResume support
+- [x] Basics
+- [x] Education
+- [x] Skills
+- [x] Projects
+- [x] Meta
+- [x] Custom Properties
+- [x] Languages
+- [ ] Work
+- [ ] Volunteer
+- [ ] Awards
+- [ ] Certificates
+- [ ] Publications
+- [ ] Interests
+- [ ] CHORE: Slim down dependencies (eg. we do not need the complete framework bundle).
+- [ ] FEATURE: Support for splitting resume into multiple files.
+- [ ] FEATURE: Support for other standards besides JSON Resume.
+- [ ] FEATURE: Support relative paths (cli).
+- [ ] FEATURE: Support for output filters (eg. sort experience in years by [level desc, years desc, skills keyword asc]).
+- [ ] FEATURE: Make singular/plural in maps optional.
+- [ ] REFACTOR: map/normalization into domain space (eg. Extract Asterisk)
+- [ ] QA: Add psalm type for canonical array
+- [ ] FEATURE: Allow null/empty values
+- [ ] REFACTOR: Reiterate on MapItem in domain space
     - is Array Notation a Domain thing? if yes, define it. if no what is the abstract thing of it?
     - what are from/to items?
     - how can we simplify the creation of the map items? or do we need more MappingStrategies to learn more about those?
-[ ] FEATURE(DomPDF): Allow overriding chroot in settings
-[ ] FEATURE(DomPDF): Allow enabling remote content
-[ ] CLI: Warn when output file already exist
-[ ] CLI: Add force option to override output file when it already exists
-[ ] CLI: Add command for input/output map validation
-[ ] CLI: Add command for generating input/output maps
-[ ] FEATURE: Add support for placeholder "increment" eg. file-xy-%i would result in "file-xy-1" or "file-xy-2". Depends if the file already exists.
-[ ] FEATURE: Add support for placeholder "date-time" eg. file-%Y-m-d-h-i-s would result in "file-2023-01-23-12-00-01".
-[ ] DOCS: Explain current decisions on:
-[ ] Mapping - Canonical
-[ ] Canonical Naming
-[ ] Templating
-[ ] ADR - which PDF library
-[ ] ADR - how to handle paths (absolute/relative)
-[ ] ADR - how to structure input map
-[ ] ADR - how to structure output map
-[ ] ADR - how to structure the resume
-[ ] ADR - what basis for canonical naming
+- [ ] FEATURE(DomPDF): Allow overriding chroot in settings
+- [ ] FEATURE(DomPDF): Allow enabling remote content
+- [ ] CLI: Warn when output file already exist
+- [ ] CLI: Add force option to override output file when it already exists
+- [ ] CLI: Add command for input/output map validation
+- [ ] CLI: Add command for generating input/output maps
+- [ ] FEATURE: Add support for placeholder "increment" eg. file-xy-%i would result in "file-xy-1" or "file-xy-2". Depends if the file already exists.
+- [ ] FEATURE: Add support for placeholder "date-time" eg. file-%Y-m-d-h-i-s would result in "file-2023-01-23-12-00-01".
+- [ ] DOCS: Explain current decisions on:
+- [ ] Mapping - Canonical
+- [ ] Canonical Naming
+- [ ] Templating
+- [ ] ADR - which PDF library
+- [ ] ADR - how to handle paths (absolute/relative)
+- [ ] ADR - how to structure input map
+- [ ] ADR - how to structure output map
+- [ ] ADR - how to structure the resume
+- [ ] ADR - what basis for canonical naming
 
 ## Limitations
 
