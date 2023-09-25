@@ -95,6 +95,9 @@ The dependencies for those are living in the ./infrastructure directory.
   - [ ] ADR - how to structure output map
   - [ ] ADR - how to structure the resume
   - [ ] ADR - what basis for canonical naming
+- [ ] EXTRACT: PropertyAccessStrategy into separate package.
+- [ ] REFACTOR: Replace static pdfbox.jar with cli which downloads it when not already available.
+- [ ] QA: Add testing pipeline (static -> unit -> integration -> acceptance)
 
 ## Limitations
 
