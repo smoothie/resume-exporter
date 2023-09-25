@@ -46,19 +46,19 @@ The dependencies for those are living in the ./infrastructure directory.
 ## Wishlist
 
 - [ ] FEATURE: Full JSONResume support
-- [x] Basics
-- [x] Education
-- [x] Skills
-- [x] Projects
-- [x] Meta
-- [x] Custom Properties
-- [x] Languages
-- [ ] Work
-- [ ] Volunteer
-- [ ] Awards
-- [ ] Certificates
-- [ ] Publications
-- [ ] Interests
+  - [x] Basics
+  - [x] Education
+  - [x] Skills
+  - [x] Projects
+  - [x] Meta
+  - [x] Custom Properties
+  - [x] Languages
+  - [ ] Work
+  - [ ] Volunteer
+  - [ ] Awards
+  - [ ] Certificates
+  - [ ] Publications
+  - [ ] Interests
 - [ ] CHORE: Slim down dependencies (eg. we do not need the complete framework bundle).
 - [ ] FEATURE: Support for splitting resume into multiple files.
 - [ ] FEATURE: Support for other standards besides JSON Resume.
