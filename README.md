@@ -44,6 +44,7 @@ The dependencies for those are living in the ./infrastructure directory.
 ...
 
 ## Wishlist
+
 [ ] FEATURE: Full JSONResume support
 [x] Basics
 [x] Education
@@ -69,9 +70,9 @@ by [level desc, years desc, skills keyword asc]).
 [ ] QA: Add psalm type for canonical array
 [ ] FEATURE: Allow null/empty values
 [ ] REFACTOR: Reiterate on MapItem in domain space
--> is Array Notation a Domain thing? if yes, define it. if no what is the abstract thing of it?
--> what are from/to items?
--> how can we simplify the creation of the map items? or do we need more MappingStrategies to learn
+- is Array Notation a Domain thing? if yes, define it. if no what is the abstract thing of it?
+- what are from/to items?
+- how can we simplify the creation of the map items? or do we need more MappingStrategies to learn
 more about those?
 [ ] FEATURE(DomPDF): Allow overriding chroot in settings
 [ ] FEATURE(DomPDF): Allow enabling remote content
