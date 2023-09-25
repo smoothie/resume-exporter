@@ -2,6 +2,11 @@
 
 Export JSON Resume into a PDF or DB.
 
+## Development Status
+
+> :warning: **This project is currently in development and is not yet production-ready.** It is a
+> work in progress, and there may be incomplete features or known issues. Use it at your own risk.
+
 ## Table Of Contents
 
 * [Installation](#installation)
