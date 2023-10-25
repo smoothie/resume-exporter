@@ -1,4 +1,4 @@
-# Project Structure: Should we break resume sections into separate contexts?
+# Should we break resume sections into separate contexts?
 
 * Status: accepted
 * Date: 2023-10-24
