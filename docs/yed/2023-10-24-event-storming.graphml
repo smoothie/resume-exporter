@@ -47,7 +47,7 @@
                                  hasLineColor="false" height="21.060104370117188" horizontalTextPosition="center"
                                  iconTextGap="4" modelName="internal" modelPosition="br" textColor="#212121"
                                  verticalTextPosition="bottom" visible="true" width="1675.4135075114305" x="-4.0"
-                                 xml:space="preserve" y="4.9398956298828125">Receiving</y:NodeLabel>
+                                 xml:space="preserve" y="4.9398956298828125">Importing</y:NodeLabel>
                     <y:Shape type="rectangle"/>
                 </y:ShapeNode>
             </data>
@@ -163,7 +163,7 @@
                                  fontStyle="plain" hasBackgroundColor="false" hasLineColor="false"
                                  height="34.12021064758301" horizontalTextPosition="center" iconTextGap="4"
                                  modelName="custom" textColor="#212121" verticalTextPosition="bottom" visible="true"
-                                 width="193.02532958984375" x="-36.512664794921875" xml:space="preserve"
+                                 width="189.893310546875" x="-34.9466552734375" xml:space="preserve"
                                  y="-53.238960647582985">An actor typically interacts with a
 read model through a UI<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel>
                         <y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="0.0" nodeRatioY="-0.5" offsetX="0.0" offsetY="-19.118749999999977" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -342,7 +342,7 @@ read model through a UI<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:
                                  hasLineColor="false" height="21.060104370117188" horizontalTextPosition="center"
                                  iconTextGap="4" modelName="internal" modelPosition="br" textColor="#212121"
                                  verticalTextPosition="bottom" visible="true" width="1558.232057478772" x="-4.0"
-                                 xml:space="preserve" y="4.9398956298828125">Importing</y:NodeLabel>
+                                 xml:space="preserve" y="4.9398956298828125">Maintaining</y:NodeLabel>
                     <y:Shape type="rectangle"/>
                 </y:ShapeNode>
             </data>
