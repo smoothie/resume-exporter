@@ -9,8 +9,12 @@ use Smoothie\ResumeExporter\Domain\Resume\Resume;
 
 class PdfResumeFactory implements ResumeFactory
 {
-    public function toArray(Resume $resume): array
+    public function toArray(array|Resume $resume): array
     {
+        if (\is_array($resume)) {
+            return $resume;
+        }
+
         return $resume->toArray();
     }
 }

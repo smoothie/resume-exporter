@@ -12,5 +12,5 @@ interface InputMapping
     /**
      * @throws InvalidCanonicalReceivedException
      */
-    public function translateToCanonical(Input $input, array $canonicalData): Resume;
+    public function translateToCanonical(Input $input, array $canonicalData): Resume|array;
 }

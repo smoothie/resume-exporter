@@ -16,9 +16,6 @@ class PropertyAccessMapItemRepository implements MapItemRepository
     {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function findCountOfParentFromItem(MapItem $mapItem, array $from): int
     {
         $items = explode(

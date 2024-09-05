@@ -19,6 +19,11 @@ class BasicKernelTestCase extends KernelTestCase
         return __DIR__.'/Doubles/Files/Templates/'.$path;
     }
 
+    public function getMappingDoublesDirectory(string $path = ''): string
+    {
+        return __DIR__.'/Doubles/Files/Mapping/'.$path;
+    }
+
     public function getTmpDirectory(string $path = ''): string
     {
         return sys_get_temp_dir().'/'.$path;

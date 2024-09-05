@@ -103,7 +103,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
         );
     }
 
-    private function provideFirstAndTranslateGoodPath(): array
+    public function provideFirstAndTranslateGoodPath(): array
     {
         return [
             'simple' => [
@@ -344,7 +344,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
         ];
     }
 
-    private function provideTranslateGoodPath(): array
+    public function provideTranslateGoodPath(): array
     {
         return [
             'simple_max_one_item' => [
@@ -1216,7 +1216,7 @@ class JsonResumeRepositoryTest extends BasicTestCase
         ];
     }
 
-    private function provideTranslateNotSoGoodPath(): array
+    public function provideTranslateNotSoGoodPath(): array
     {
         return [
             'all_missing' => [

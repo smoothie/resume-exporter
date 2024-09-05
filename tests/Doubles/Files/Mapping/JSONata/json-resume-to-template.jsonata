@@ -1,0 +1,8 @@
+{
+    'basics': basics,
+    'languages': languages,
+    'education': education,
+    'projects': projects,
+    'skills': skills,
+    'labels': meta._content.labels
+}

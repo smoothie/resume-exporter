@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Smoothie\ResumeExporter\Infrastructure\Constraints;
 
-use Attribute;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Compound;
 

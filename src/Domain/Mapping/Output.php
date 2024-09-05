@@ -15,7 +15,7 @@ class Output
         private readonly OutputFormat $outputFormat,
         private readonly array $mapSettings,
         private readonly array $map,
-        private readonly Resume $canonical,
+        private readonly Resume|array $canonical,
     ) {
     }
 
@@ -39,7 +39,7 @@ class Output
         return $this->mapSource;
     }
 
-    public function getCanonical(): Resume
+    public function getCanonical(): Resume|array
     {
         return $this->canonical;
     }

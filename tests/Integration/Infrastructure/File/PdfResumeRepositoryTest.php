@@ -130,7 +130,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
         return ResumeFactory::create($resume);
     }
 
-    private function providePersistGoodPath(): array
+    public function providePersistGoodPath(): array
     {
         $outputFormat = OutputFormat::PDF;
 
@@ -625,7 +625,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
                         'mapSettings' => [
                             'pageNumbers' => [
                                 'text' => 'Page {PAGE_NUM} of {PAGE_COUNT}',
-                                'font' => 'Poppins',
+                                'font' => 'courier',
                                 'x' => 490,
                                 'y' => 780,
                                 'color' => [0.033, 0.033, 0.033],
@@ -860,7 +860,7 @@ class PdfResumeRepositoryTest extends BasicTestCase
         ];
     }
 
-    private function provideTranslateFromCanonicalGoodPath(): array
+    public function provideTranslateFromCanonicalGoodPath(): array
     {
         $outputFormat = OutputFormat::PDF;
 

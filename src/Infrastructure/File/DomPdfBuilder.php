@@ -6,7 +6,6 @@ namespace Smoothie\ResumeExporter\Infrastructure\File;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
-use Exception;
 
 class DomPdfBuilder
 {
@@ -25,7 +24,7 @@ class DomPdfBuilder
         return $domPdf;
     }
 
-    public function addFont(DomPdf $domPdf, DomPdfFont $font): DomPdf
+    public function addFont(Dompdf $domPdf, DomPdfFont $font): Dompdf
     {
         $domPdf->getFontMetrics()->registerFont(
             style: $font->getStyle(),
@@ -35,7 +34,7 @@ class DomPdfBuilder
         return $domPdf;
     }
 
-    public function addHtml(DomPdf $domPdf, string $html): DomPdf
+    public function addHtml(Dompdf $domPdf, string $html): Dompdf
     {
         $domPdf->loadHtml(str: $html, encoding: 'UTF-8');
         $domPdf->setPaper(size: 'A4');
@@ -44,7 +43,7 @@ class DomPdfBuilder
         return $domPdf;
     }
 
-    public function addPageText(DomPdf $domPdf, DomPdfPageText $pageText): DomPdf
+    public function addPageText(Dompdf $domPdf, DomPdfPageText $pageText): Dompdf
     {
         $domPdf->getCanvas()->page_text(
             x: $pageText->getX(),
@@ -61,14 +60,13 @@ class DomPdfBuilder
         return $domPdf;
     }
 
-    public function print(DomPdf $domPdf): string
+    public function print(Dompdf $domPdf): string
     {
         $output = $domPdf->output();
         if (\is_string($output)) {
             return $output;
         }
 
-        // todo create exception
         throw new \Exception('For some reason we received no output.');
     }
 }

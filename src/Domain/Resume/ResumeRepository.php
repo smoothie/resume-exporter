@@ -12,5 +12,5 @@ interface ResumeRepository
     /**
      * @throws InvalidCanonicalReceivedException
      */
-    public function firstAndTranslate(Input $input): Resume;
+    public function firstAndTranslate(Input $input): Resume|array;
 }

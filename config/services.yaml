@@ -2,6 +2,9 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+        bind:
+            $pythonCli: 'python3'
+            $pythonJsonataCli: '%kernel.project_dir%/build/jsonata/cli/__main__.py'
 
     Smoothie\ResumeExporter\:
         resource: '../src/'

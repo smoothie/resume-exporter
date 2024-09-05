@@ -2,19 +2,14 @@
 
 $workingDirectory = __DIR__;
 $srcDirectory = $workingDirectory.'/src';
-$unitTestDirectory = $workingDirectory.'/tests/Unit';
 
 if (is_readable($srcDirectory) === false) {
     throw new RuntimeException('Unable to find ./src directory. What did you do??!');
 }
 
-if (is_readable($unitTestDirectory) === false) {
-    throw new RuntimeException('Unable to find ./tests/Unit directory. What did you do??!');
-}
-
 $finder = PhpCsFixer\Finder::create()
     ->in($srcDirectory)
-    ->in($unitTestDirectory);
+;
 
 $config = new PhpCsFixer\Config();
 

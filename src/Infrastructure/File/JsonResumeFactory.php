@@ -61,9 +61,6 @@ class JsonResumeFactory implements ReadResumeFactory
         );
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function validate(array $canonicalData): void
     {
         $groups = new Assert\GroupSequence(['Default']);

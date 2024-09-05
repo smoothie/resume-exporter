@@ -86,8 +86,6 @@ class ExportCommandTest extends BasicKernelTestCase
 
     public function provideNotSoGoodPathJsonResumeToTwigPdf(): array
     {
-        // todo
-
         return [
             'when_input_config_is_not_defined' => [
                 'assertions' => [
@@ -720,10 +718,16 @@ class ExportCommandTest extends BasicKernelTestCase
 
         $command = $application->find('resume:export');
         $commandTester = new CommandTester($command);
-        $commandTester->execute(input: [
+        $commandInput = [
             'input' => $assertions['inputConfigFilePath'],
             'output' => $assertions['outputConfigFilePath'],
-        ]);
+        ];
+
+        if (isset($assertions['type'])) {
+            $commandInput['--type'] = $assertions['type'];
+        }
+
+        $commandTester->execute(input: $commandInput);
 
         $commandTester->assertCommandIsSuccessful();
 
@@ -889,7 +893,7 @@ class ExportCommandTest extends BasicKernelTestCase
                     'contents' => <<<HTML
                         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                         "http://www.w3.org/TR/html4/loose.dtd">
-                        <html><head><title>Document</title>
+                        <html><head><title>basic.name - basic.label</title>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
@@ -1148,7 +1152,7 @@ class ExportCommandTest extends BasicKernelTestCase
                     'contents' => <<<HTML
                         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                         "http://www.w3.org/TR/html4/loose.dtd">
-                        <html><head><title>Document</title>
+                        <html><head><title>basic.name - basic.label</title>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
@@ -1333,7 +1337,7 @@ class ExportCommandTest extends BasicKernelTestCase
                         'settings' => [
                             'pageNumbers' => [
                                 'text' => 'Page {PAGE_NUM} of {PAGE_COUNT}',
-                                'font' => 'Poppins',
+                                'font' => 'courier',
                                 'x' => 490,
                                 'y' => 780,
                                 'color' => [0.033, 0.033, 0.033],
@@ -1401,7 +1405,7 @@ class ExportCommandTest extends BasicKernelTestCase
                     'contents' => <<<HTML
                         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                         "http://www.w3.org/TR/html4/loose.dtd">
-                        <html><head><title>Document</title>
+                        <html><head><title>basic.name - basic.label</title>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                         </head>
                         <body>
@@ -1509,6 +1513,67 @@ class ExportCommandTest extends BasicKernelTestCase
                         <p>skills.*.detailedKeywords.*.keyword skills.*.detailedKeywords.*.experienceInYears skills.*.detailedKeywords.*.level
                         </p>
                         <p>Page 3 of 3</p>
+
+                        </div></div>
+                        </body></html>
+                        HTML,
+                ],
+            ],
+            'simple_jsonata' => [
+                'assertions' => [
+                    'type' => 'JSONATA',
+                    'inputResume' => '{"$schema":"../schemas/resume-schema.json","basics":{"name":"basic.name","label":"basic.label","email":"basic.email","phone":"basic.phone","url":"basic.url","summary":"basic.summary","location":{"address":"basic.location.address","postalCode":"basic.location.postalCode","city":"basic.location.city","countryCode":"basic.location.countryCode"},"profiles":[{"network":"basic.profiles.0.network","username":"basic.profiles.0.username","url":"basic.profiles.0.url"},{"network":"basic.profiles.*.network","username":"basic.profiles.*.username","url":"basic.profiles.*.url"}],"_overview":{"items":[{"label":"basic.overview.items.0.label","value":"basic.overview.items.0.value"},{"label":"basic.overview.items.1.label","value":"basic.overview.items.1.value"},{"label":"basic.overview.items.*.label","value":"basic.overview.items.*.value"}]}},"education":[{"area":"education.0.area","endDate":"education.0.endDate","startDate":"education.0.startDate","studyType":"education.0.studyType"},{"area":"education.1.area","endDate":"education.1.endDate","startDate":"education.1.startDate","studyType":"education.1.studyType"}],"skills":[{"name":"skills.0.name","_label":"skills.0.label","_detailedKeywords":[{"keyword":"skills.0.detailedKeywords.0.keyword","level":"skills.0.detailedKeywords.0.level","experienceInYears":"skills.0.detailedKeywords.0.experienceInYears"},{"keyword":"skills.0.detailedKeywords.1.keyword","level":"skills.0.detailedKeywords.1.level","experienceInYears":"skills.0.detailedKeywords.1.experienceInYears"},{"keyword":"skills.0.detailedKeywords.*.keyword","level":"skills.0.detailedKeywords.*.level","experienceInYears":"skills.0.detailedKeywords.*.experienceInYears"}]},{"name":"skills.*.name","_label":"skills.*._label","_detailedKeywords":[{"keyword":"skills.*.detailedKeywords.*.keyword","level":"skills.*.detailedKeywords.*.level","experienceInYears":"skills.*.detailedKeywords.*.experienceInYears"}]}],"languages":[{"language":"languages.*.language","fluency":"languages.*.fluency"}],"projects":[{"name":"projects.0.name","description":"projects.0.description","entity":"projects.0.entity","type":"projects.0.type","startDate":"projects.0.startDate","endDate":"projects.0.endDate","highlights":["projects.0.highlights.0","projects.0.highlights.1","projects.0.highlights.2","projects.0.highlights.*"],"keywords":["projects.0.keywords.*"],"roles":["projects.0.roles.*"]},{"name":"projects.*.name","description":"projects.*.description","entity":"projects.*.entity","type":"projects.*.type","startDate":"projects.*.startDate","endDate":"projects.*.endDate","highlights":["projects.*.highlights.*"],"keywords":["projects.*.keywords.*"],"roles":["projects.*.roles.*"]}],"meta":{"canonical":"meta.canonical","version":"meta.version","lastModified":"meta.lastModified","_content":{"labels":{"skills":"meta.content.labels.skills","languages":"meta.content.labels.languages","language":"meta.content.labels.language","overview":"meta.content.labels.overview","projects":"meta.content.labels.projects","education":"meta.content.labels.education","competences":"meta.content.labels.competences","moreCompetences":"meta.content.labels.moreCompetences","experienceInYears":"meta.content.labels.experienceInYears","experienceLevel":"meta.content.labels.experienceLevel","years":{"singular":"meta.content.labels.years.singular","plural":"meta.content.label.years.plurals"},"page":"meta.content.labels.page","pageOf":"meta.content.label.pageOfs"}}}}',
+                    'inputResumeFileName' => 'good-json-to-twig-pdf__input-4.json',
+                    'outputResumeFileName' => 'good-json-to-twig-pdf__output-4.pdf',
+                    'inputConfigFileName' => 'good-json-to-twig-pdf__input-config-4.json',
+                    'outputConfigFileName' => 'good-json-to-twig-pdf__output-config-4.json',
+                    'inputConfigFilePath' => 'vfs://mockedTmp/good-json-to-twig-pdf__input-config-4.json',
+                    'outputConfigFilePath' => 'vfs://mockedTmp/good-json-to-twig-pdf__output-config-4.json',
+                    'templateDirectory' => $this->getTemplateDoublesDirectory(path: 'TwigPdf'),
+                    'fontsDirectory' => null,
+                    'input' => [
+                        'file' => 'vfs://mockedTmp/good-json-to-twig-pdf__output-4.pdf',
+                        'format' => OutputFormat::PDF,
+                        'template' => 'vfs://mockedTmp/easy.html.twig',
+                        'settings' => [
+                            'map' => $this->getMappingDoublesDirectory(path: 'JSONata/json-resume-to-template.jsonata'),
+                            'input' => $this->getMappingDoublesDirectory(path: 'JSONata/json-resume.json'),
+                        ],
+                    ],
+                    'output' => null,
+                ],
+                'expectations' => [
+                    'file' => 'good-json-to-twig-pdf__output-4.pdf',
+                    'contents' => <<<HTML
+                        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html4/loose.dtd">
+                        <html><head><title>basic.name - basic.label</title>
+                        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                        </head>
+                        <body>
+                        <div style="page-break-before:always; page-break-after:always"><div><p><b>basics
+                        </b></p>
+                        <p>{&quot;name&quot;:&quot;basic.name&quot;,&quot;label&quot;:&quot;basic.label&quot;,&quot;email&quot;:&quot;basic.email&quot;,&quot;phone&quot;:&quot;basic.phone&quot;,&quot;url&quot;:&quot;basic.url&quot;,&quot;summary&quot;:&quot;basic.summary&quot;,&quot;location&quot;:{&quot;address&quot;:&quot;basic.location.address&quot;,&quot;postalCode&quot;:&quot;basic.location.postalCode&quot;,&quot;city&quot;:&quot;basic.location.city&quot;,&quot;countryCode&quot;:&quot;basic.location.countryCode&quot;},&quot;profiles&quot;:[{&quot;network&quot;:&quot;basic.profiles.0.network&quot;,&quot;username&quot;:&quot;basic.profiles.0.username&quot;,&quot;url&quot;:&quot;basic.profiles.0.url&quot;},{&quot;network&quot;:&quot;basic.profiles.*.network&quot;,&quot;username&quot;:&quot;basic.profiles.*.username&quot;,&quot;url&quot;:&quot;basic.profiles.*.url&quot;}],&quot;_overview&quot;:{&quot;items&quot;:[{&quot;label&quot;:&quot;basic.overview.items.0.label&quot;,&quot;value&quot;:&quot;basic.overview.items.0.value&quot;},{&quot;label&quot;:&quot;basic.overview.items.1.label&quot;,&quot;value&quot;:&quot;basic.overview.items.1.value&quot;},{&quot;label&quot;:&quot;basic.overview.items.*.label&quot;,&quot;value&quot;:&quot;basic.overview.items.*.value&quot;}]}}
+                        </p>
+                        <p><b>languages
+                        </b></p>
+                        <p>[{&quot;language&quot;:&quot;languages.*.language&quot;,&quot;fluency&quot;:&quot;languages.*.fluency&quot;}]
+                        </p>
+                        <p><b>education
+                        </b></p>
+                        <p>[{&quot;area&quot;:&quot;education.0.area&quot;,&quot;endDate&quot;:&quot;education.0.endDate&quot;,&quot;startDate&quot;:&quot;education.0.startDate&quot;,&quot;studyType&quot;:&quot;education.0.studyType&quot;},{&quot;area&quot;:&quot;education.1.area&quot;,&quot;endDate&quot;:&quot;education.1.endDate&quot;,&quot;startDate&quot;:&quot;education.1.startDate&quot;,&quot;studyType&quot;:&quot;education.1.studyType&quot;}]
+                        </p>
+                        <p><b>projects
+                        </b></p>
+                        <p>[{&quot;name&quot;:&quot;projects.0.name&quot;,&quot;description&quot;:&quot;projects.0.description&quot;,&quot;entity&quot;:&quot;projects.0.entity&quot;,&quot;type&quot;:&quot;projects.0.type&quot;,&quot;startDate&quot;:&quot;projects.0.startDate&quot;,&quot;endDate&quot;:&quot;projects.0.endDate&quot;,&quot;highlights&quot;:[&quot;projects.0.highlights.0&quot;,&quot;projects.0.highlights.1&quot;,&quot;projects.0.highlights.2&quot;,&quot;projects.0.highlights.*&quot;],&quot;keywords&quot;:[&quot;projects.0.keywords.*&quot;],&quot;roles&quot;:[&quot;projects.0.roles.*&quot;]},{&quot;name&quot;:&quot;projects.*.name&quot;,&quot;description&quot;:&quot;projects.*.description&quot;,&quot;entity&quot;:&quot;projects.*.entity&quot;,&quot;type&quot;:&quot;projects.*.type&quot;,&quot;startDate&quot;:&quot;projects.*.startDate&quot;,&quot;endDate&quot;:&quot;projects.*.endDate&quot;,&quot;highlights&quot;:[&quot;projects.*.highlights.*&quot;],&quot;keywords&quot;:[&quot;projects.*.keywords.*&quot;],&quot;roles&quot;:[&quot;projects.*.roles.*&quot;]}]
+                        </p>
+                        <p><b>skills
+                        </b></p>
+                        <p>[{&quot;name&quot;:&quot;skills.0.name&quot;,&quot;_label&quot;:&quot;skills.0.label&quot;,&quot;_detailedKeywords&quot;:[{&quot;keyword&quot;:&quot;skills.0.detailedKeywords.0.keyword&quot;,&quot;level&quot;:&quot;skills.0.detailedKeywords.0.level&quot;,&quot;experienceInYears&quot;:&quot;skills.0.detailedKeywords.0.experienceInYears&quot;},{&quot;keyword&quot;:&quot;skills.0.detailedKeywords.1.keyword&quot;,&quot;level&quot;:&quot;skills.0.detailedKeywords.1.level&quot;,&quot;experienceInYears&quot;:&quot;skills.0.detailedKeywords.1.experienceInYears&quot;},{&quot;keyword&quot;:&quot;skills.0.detailedKeywords.*.keyword&quot;,&quot;level&quot;:&quot;skills.0.detailedKeywords.*.level&quot;,&quot;experienceInYears&quot;:&quot;skills.0.detailedKeywords.*.experienceInYears&quot;}]},{&quot;name&quot;:&quot;skills.*.name&quot;,&quot;_label&quot;:&quot;skills.*._label&quot;,&quot;_detailedKeywords&quot;:[{&quot;keyword&quot;:&quot;skills.*.detailedKeywords.*.keyword&quot;,&quot;level&quot;:&quot;skills.*.detailedKeywords.*.level&quot;,&quot;experienceInYears&quot;:&quot;skills.*.detailedKeywords.*.experienceInYears&quot;}]}]
+                        </p>
+                        <p><b>labels
+                        </b></p>
+                        <p>{&quot;skills&quot;:&quot;meta.content.labels.skills&quot;,&quot;languages&quot;:&quot;meta.content.labels.languages&quot;,&quot;language&quot;:&quot;meta.content.labels.language&quot;,&quot;overview&quot;:&quot;meta.content.labels.overview&quot;,&quot;projects&quot;:&quot;meta.content.labels.projects&quot;,&quot;education&quot;:&quot;meta.content.labels.education&quot;,&quot;competences&quot;:&quot;meta.content.labels.competences&quot;,&quot;moreCompetences&quot;:&quot;meta.content.labels.moreCompetences&quot;,&quot;experienceInYears&quot;:&quot;meta.content.labels.experienceInYears&quot;,&quot;experienceLevel&quot;:&quot;meta.content.labels.experienceLevel&quot;,&quot;years&quot;:{&quot;singular&quot;:&quot;meta.content.labels.years.singular&quot;,&quot;plural&quot;:&quot;meta.content.label.years.plurals&quot;},&quot;page&quot;:&quot;meta.content.labels.page&quot;,&quot;pageOf&quot;:&quot;meta.content.label.pageOfs&quot;}</p>
 
                         </div></div>
                         </body></html>

@@ -3,6 +3,8 @@ assets/
 coverage/
 var/
 vendor/
+node_modules/
+build/
 
 # Files
 .env*

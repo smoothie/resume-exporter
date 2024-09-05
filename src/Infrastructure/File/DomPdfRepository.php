@@ -42,12 +42,16 @@ class DomPdfRepository
         $domPdf = $this->domPdfBuilder->addHtml(domPdf: $domPdf, html: $html);
 
         if (isset($settings[DomPdfPageText::KEY_PAGE_NUMBERS])) {
-            $font = $domPdf->getFontMetrics()->getFont(
-                familyRaw: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_FONT],
-            );
+            $font = null;
 
-            if (empty($font)) {
-                throw new \Exception('Unknown font, cant add pageNumbers');
+            if (! empty($settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_FONT])) {
+                $font = $domPdf->getFontMetrics()->getFont(
+                    familyRaw: $settings[DomPdfPageText::KEY_PAGE_NUMBERS][DomPdfPageText::KEY_FONT],
+                );
+
+                if (empty($font)) {
+                    throw new \Exception('Unknown font, cant add an unknown custom font for $pageNumbers.');
+                }
             }
 
             $pageText = new DomPdfPageText(
@@ -61,6 +65,13 @@ class DomPdfRepository
 
             $domPdf = $this->domPdfBuilder->addPageText(domPdf: $domPdf, pageText: $pageText);
         }
+
+        $name = $pdfData['basics']['name'] ?? $pdfData['basicsName'];
+        $label = $pdfData['basics']['label'] ?? $pdfData['basicsLabel'];
+
+        $domPdf->addInfo('Creator', $name);
+        $domPdf->addInfo('Producer', 'smoothie <hello@marceichenseher.com>');
+        $domPdf->addInfo('Title', \sprintf('%1$s - %2$s', $name, $label));
 
         $outputData = $this->domPdfBuilder->print($domPdf);
 

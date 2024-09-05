@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Smoothie\ResumeExporter\Infrastructure\Constraints;
 
-use Attribute;
 use Symfony\Component\Validator\Attribute\HasNamedArguments;
 use Symfony\Component\Validator\Constraint;
 
@@ -17,7 +16,7 @@ class IsPathExtension extends Constraint
     #[HasNamedArguments]
     public function __construct(
         public string $extension,
-        array $groups = null,
+        ?array $groups = null,
         mixed $payload = null,
     ) {
         parent::__construct([], $groups, $payload);
